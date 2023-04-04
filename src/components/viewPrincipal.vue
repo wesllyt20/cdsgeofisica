@@ -4,22 +4,28 @@
     <!-- SUPERIOR -->
     <div class="barra-superior">
       <div class="logos">
-        <v-img id="minamLogo" src="/Logo Minam.svg" />
-        <v-img id="igpLogo" src="/Logo IGP.svg" />
+        <v-img
+          id="minam"
+          src="https://www.igp.gob.pe/programas-de-investigacion/images/logo-minan.png"
+        />
+        <v-img
+          id="igpLogo"
+          src="https://www.igp.gob.pe/programas-de-investigacion/images/logo_igp_normal.png"
+        />
       </div>
       <div id="dividermenutop" class="border border-vertical" />
-      <h1 class="titulo">Comportamiento Dinámico de Suelos (CDS)</h1>
+      <h1 class="titulo">
+        Comportamiento Dinámico de Suelos Geofísico (CDSGeofísico)
+      </h1>
       <div class="opciones">
         <a id="acerca" class="my-linktop" @click="btnGeofi()">Acerca de</a>
         <div id="dividermenutopL" class="border border-vertical" />
-        <a id="func" class="my-linktop" @click="btnFuncion()">Funcionalidad</a>
-        <div id="dividermenutopL" class="border border-vertical" />
         <a
-          id="glosa"
+          id="func"
           class="my-linktop"
-          @click="btnGlorsario()"
-          :style="{ marginRight: '80px' }"
-          >Glosario</a
+          @click="btnFuncion()"
+          :style="{ marginRight: '50px' }"
+          >Guía de uso</a
         >
       </div>
     </div>
@@ -66,22 +72,24 @@
       class="rail-variant ml-n14"
       :class="{ 'rail-variant--open': drawer }"
       icon
-      @click.stop="drawer = !drawer"
+      @click.stop="onMoveWidgetsButtonClick"
     >
-      <v-img id="iconFlecha" src="/flechaPe.svg"></v-img>
+      <v-img
+        id="iconFlecha"
+        src="https://i.ibb.co/VSqBM9X/Vector-1.png"
+      ></v-img>
     </v-btn>
     <!-- contenedor de menu -->
     <v-navigation-drawer
       v-model="drawer"
       :style="{
         transition: 'transform 0.01s ease-in-out',
-        width: '22.375rem',
+        width: anchoMenu,
         marginTop: '120px',
       }"
     >
       <contFuncion v-show="mostrarFun"></contFuncion>
       <contGeofisico v-show="mostrarGeo"></contGeofisico>
-      <contGlorsario v-show="mostrarGlo"></contGlorsario>
     </v-navigation-drawer>
     <!-- END MENU -->
 
@@ -99,7 +107,7 @@
     >
       <iframe
         id="inlineFrameExample"
-        src="https://10.10.150.76:3344/webappbuilder/apps/2/"
+        src="https://ide.igp.gob.pe/geovisor/estudios-cts"
         style="width: 100%; height: 100%"
       ></iframe>
     </div>
@@ -110,7 +118,6 @@
 <script>
 import contFuncion from "./contFuncion.vue";
 import contGeofisico from "./contGeofisico.vue";
-import contGlorsario from "./contGlorsario.vue";
 
 window.onload = function () {
   var iframe = document.getElementById("inlineFrameExample");
@@ -120,20 +127,27 @@ window.onload = function () {
       iframe.contentWindow.document.body.scrollHeight + "px";
   };
 };
+const ids = [
+  "widgets_ZoomSlider_Widget_59",
+  "widgets_HomeButton_Widget_60",
+  "widgets_Search_Widget_58",
+  "dijit__WidgetBase_2",
+];
+
 export default {
   name: "viewPrincipal",
+
   components: {
     contFuncion,
     contGeofisico,
-    contGlorsario,
   },
   data() {
     return {
       railVariantLeft: 10,
-      drawer: false,
+      drawer: true,
       mostrarGeo: true,
       mostrarFun: false,
-      mostrarGlo: false,
+      anchoMenu: "450px",
     };
   },
   methods: {
@@ -145,15 +159,29 @@ export default {
       this.ocultarTodo();
       this.mostrarFun = true;
     },
-    btnGlorsario() {
-      this.ocultarTodo();
-      this.mostrarGlo = true;
-    },
+
     ocultarTodo() {
       this.mostrarGeo = false;
       this.mostrarFun = false;
-      this.mostrarGlo = false;
       this.drawer = true;
+      //this.movewidgets(465);
+    },
+
+    onMoveWidgetsButtonClick() {
+      this.drawer = !this.drawer;
+    },
+
+    movewidgets(displacement) {
+      const id = document.getElementById("inlineFrameExample");
+      const idocument = id.contentWindow.document;
+
+      ids.forEach((id) => {
+        var widget = idocument.getElementById(id);
+        let split = widget.style.inset.split(" ");
+        let left = parseInt(split[3].slice(0, 3));
+        split[3] = `${left + displacement}px`;
+        widget.style.inset = split.join(" ");
+      });
     },
   },
   watch: {
@@ -186,19 +214,19 @@ export default {
 }
 
 .rail-variant--open {
-  left: 361px;
+  left: calc(v-bind(anchoMenu) + 3px);
 }
 /* BOTON DE FLECHA */
 #btnFlecha {
-  margin-top: 250px;
+  margin-top: 300px;
   position: absolute;
   width: 66.3px;
   height: 49.98px;
 }
 #iconFlecha {
   margin-left: 50px;
-  width: 9px;
-  height: 9px;
+  width: 10px;
+  height: 11px;
 }
 /* HEADER SUPERIOR */
 .barra-superior {
@@ -214,19 +242,24 @@ export default {
 .logos {
   display: flex;
   align-items: center;
+  padding-left: 20px;
 }
 
-#minamLogo {
-  width: 260px;
-  height: 64px;
-  margin-right: -25px;
+#minam {
+  width: 157.49px;
+  height: 46px;
+  margin-right: 10px;
 }
 
 #igpLogo {
   width: 122px;
-  height: 35px;
+  height: 40px;
 }
-
+#dividermenutop {
+  height: 40%;
+  margin-left: 25px;
+  margin-right: 25px;
+}
 .titulo {
   color: #0000af;
   font-style: normal;
@@ -270,11 +303,6 @@ export default {
   text-decoration: none;
 }
 
-#dividermenutop {
-  height: 40%;
-  margin-left: 25px;
-  margin-right: 35px;
-}
 #dividermenutopL {
   margin-top: 4px;
   height: 16px;
@@ -286,7 +314,7 @@ export default {
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  background: #f0f4fd;
+  background: rgba(214, 214, 227, 0.1);
   border-width: 1px 0px;
   border-style: solid;
   border-color: #d6d6e3;
