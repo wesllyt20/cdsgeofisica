@@ -109,6 +109,7 @@
         id="inlineFrameExample"
         src="https://ide.igp.gob.pe/geovisor/estudios-cts"
         style="width: 100%; height: 100%"
+        @load="iframeLoad"
       ></iframe>
     </div>
     <!-- END IFRAME -->
@@ -144,31 +145,61 @@ export default {
   data() {
     return {
       railVariantLeft: 10,
-      drawer: true,
+      drawer: false,
       mostrarGeo: true,
       mostrarFun: false,
       anchoMenu: "450px",
+      elementos: false,
     };
   },
   methods: {
+    iframeLoad() {
+      setTimeout(() => {
+        this.positivo();
+        this.drawer = true;
+      }, 4000);
+    },
     btnGeofi() {
       this.ocultarTodo();
       this.mostrarGeo = true;
+      if (this.elementos === false) {
+        this.positivo();
+      }
     },
     btnFuncion() {
       this.ocultarTodo();
       this.mostrarFun = true;
+      if (this.elementos === false) {
+        this.positivo();
+      }
     },
 
     ocultarTodo() {
       this.mostrarGeo = false;
       this.mostrarFun = false;
       this.drawer = true;
+
       //this.movewidgets(465);
     },
 
     onMoveWidgetsButtonClick() {
       this.drawer = !this.drawer;
+
+      if (this.elementos === true) {
+        this.negativo();
+      } else if (this.elementos === false) {
+        this.positivo();
+      }
+    },
+    positivo() {
+      this.elementos = true;
+      //this.movewidgets(465);
+      console.log("POSITIVO");
+    },
+    negativo() {
+      this.elementos = false;
+      //this.movewidgets(-465);
+      console.log("NEGATIVO");
     },
 
     movewidgets(displacement) {
