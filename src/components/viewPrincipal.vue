@@ -14,9 +14,7 @@
         />
       </div>
       <div id="dividermenutop" class="border border-vertical" />
-      <h1 class="titulo">
-        Comportamiento Dinámico de Suelos Geofísico (CDSGeofísico)
-      </h1>
+      <h1 class="titulo">CDS - IGP</h1>
       <div class="opciones">
         <a id="acerca" class="my-linktop" @click="btnGeofi()">Acerca de</a>
         <div id="dividermenutopL" class="border border-vertical" />
@@ -59,7 +57,7 @@
         class="my-link"
         href="https://ide.igp.gob.pe/geovisor/estudios-cts/"
         target="_blank"
-        >CDSGeofísico</a
+        >CDS - IGP</a
       >
     </div>
     <!-- final inferior -->
@@ -69,14 +67,15 @@
     <!-- boton -->
     <v-btn
       id="btnFlecha"
-      class="rail-variant ml-n14"
+      class="rail-variant ml-n10"
       :class="{ 'rail-variant--open': drawer }"
       icon
       @click.stop="onMoveWidgetsButtonClick"
     >
       <v-img
         id="iconFlecha"
-        src="https://i.ibb.co/VSqBM9X/Vector-1.png"
+        class="rotate-image"
+        src="https://i.ibb.co/CJzYHCM/Vector-1.png"
       ></v-img>
     </v-btn>
     <!-- contenedor de menu -->
@@ -129,10 +128,13 @@ window.onload = function () {
   };
 };
 const ids = [
-  "widgets_ZoomSlider_Widget_59",
-  "widgets_HomeButton_Widget_60",
-  "widgets_Search_Widget_58",
-  "dijit__WidgetBase_2",
+  "widgets_ZoomSlider_Widget_72",
+  "widgets_HomeButton_Widget_68",
+  "widgets_Search_Widget_60",
+  "dijit__WidgetBase_0",
+  "_62_panel",
+  "widgets_Scalebar_Widget_59",
+  "widgets_Coordinate_Widget_61",
 ];
 
 export default {
@@ -178,12 +180,13 @@ export default {
       this.mostrarGeo = false;
       this.mostrarFun = false;
       this.drawer = true;
-
-      //this.movewidgets(465);
     },
 
     onMoveWidgetsButtonClick() {
       this.drawer = !this.drawer;
+      this.imageFlipped = !this.imageFlipped;
+      const iconFlecha = document.querySelector("#iconFlecha");
+      iconFlecha.classList.toggle("rotate-180", this.imageFlipped);
 
       if (this.elementos === true) {
         this.negativo();
@@ -193,25 +196,33 @@ export default {
     },
     positivo() {
       this.elementos = true;
-      //this.movewidgets(465);
-      console.log("POSITIVO");
+      this.movewidgets(465);
     },
     negativo() {
       this.elementos = false;
-      //this.movewidgets(-465);
-      console.log("NEGATIVO");
+      this.movewidgets(-465);
     },
 
     movewidgets(displacement) {
-      const id = document.getElementById("inlineFrameExample");
-      const idocument = id.contentWindow.document;
+      const iframe = document.getElementById("inlineFrameExample");
+      const idocument = iframe.contentWindow.document;
 
       ids.forEach((id) => {
-        var widget = idocument.getElementById(id);
-        let split = widget.style.inset.split(" ");
-        let left = parseInt(split[3].slice(0, 3));
-        split[3] = `${left + displacement}px`;
-        widget.style.inset = split.join(" ");
+        var widget = null;
+        while (!widget) {
+          widget = idocument.getElementById(id);
+        }
+        console.log("--->", widget);
+        let left = 0;
+        if (!widget.style.inset) {
+          left = parseInt(widget.style.left.slice(0, 3));
+          widget.style.left = `${left + displacement}px`;
+        } else {
+          let split = widget.style.inset.split(" ");
+          left = parseInt(split[3].slice(0, 3));
+          split[3] = `${left + displacement}px`;
+          widget.style.inset = split.join(" ");
+        }
       });
     },
   },
@@ -251,13 +262,13 @@ export default {
 #btnFlecha {
   margin-top: 300px;
   position: absolute;
-  width: 66.3px;
+  width: 60.3px;
   height: 49.98px;
 }
 #iconFlecha {
-  margin-left: 50px;
-  width: 10px;
-  height: 11px;
+  margin-left: 30px;
+  width: 19px;
+  height: 20px;
 }
 /* HEADER SUPERIOR */
 .barra-superior {
@@ -379,5 +390,12 @@ export default {
   height: 40%;
   margin-left: 5px;
   margin-right: 15px;
+}
+.rotate-image {
+  transition: transform 0.5s; /* Agrega transición de transformación */
+}
+
+.rotate-image.rotate-180 {
+  transform: rotate(180deg); /* Gira la imagen 180 grados */
 }
 </style>

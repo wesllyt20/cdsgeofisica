@@ -241,12 +241,32 @@
     <p class="parrafoFun">Tambien puedes mirar nuestro videotutorial aqui.</p>
     <br />
 
-    <!-- <a id="btnAcercade" class="my-linktop" @click="btnGeofi()">Acerca de</a>-->
+    <btn
+      id="btnAcercade"
+      class="my-linktop"
+      @click="recepGeo"
+      style="color: #0000af"
+      >Ver Acerca de</btn
+    >
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
   </div>
 </template>
   
-  <script>
-export default {};
+<script>
+export default {
+  methods: {
+    recepGeo() {
+      // Lógica de la función receptora
+      document.querySelectorAll("#acerca").forEach((boton) => boton.click());
+    },
+  },
+};
 </script>
   
   <style>
@@ -294,5 +314,20 @@ export default {};
 }
 .anuncio {
   margin: 0px 30px 0px 45px;
+}
+#btnAcercade {
+  width: 141.98px;
+  height: 24.73px;
+  background: #ffffff;
+  border: 0.426437px solid rgba(0, 33, 79, 0.6);
+  border-radius: 4.26437px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 45px;
 }
 </style>

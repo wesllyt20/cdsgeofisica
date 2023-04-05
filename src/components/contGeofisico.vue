@@ -1,9 +1,7 @@
 <template>
   <div>
-    <div class="img-container">
-      <v-img id="mapaImg" src="https://i.ibb.co/q90Cts6/afrik.png" />
-    </div>
-    <h2 id="tiGeo">¿Qué es CDSGeofísico?</h2>
+    <div class="bg-image"></div>
+    <h2 id="tiGeo">¿Qué es CDS - IGP?</h2>
     <div id="parGeo" class="mb-5">
       <p class="parrafoGeo">
         Dentro del Programa Presupuestal por Resultados Nº068 "Reducción de la
@@ -30,6 +28,12 @@
         implementación de acciones y medidas para reducir el riesgo ante la
         ocurrencia de sismos.
       </p>
+      
+      <br>
+      <br>
+      <br>
+    
+
     </div>
   </div>
 </template>
@@ -60,31 +64,34 @@ export default {};
   margin-left: 45px;
   margin-right: 45px;
 }
-.img-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 50%;
-}
-
-.img-container:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.bg-image {
+  background-image: url(https://i.ibb.co/BrFG4zN/image.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px; /* Altura ajustada */
+  background-position: center; /* Alinea la imagen al centro */
+  background-color: #0077be; /* Color de fondo */
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 1)
-  );
+  ),
+    url(https://i.ibb.co/BrFG4zN/image.png); /* Agrega un degradado */
+  background-position-y:-200px ;
+
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
 }
 
-#mapaImg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+::-webkit-scrollbar-thumb {
+    background-color: #bbbbbb;
+    border-radius: 5px;
 }
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #888;
+}
+
 </style>
