@@ -52,194 +52,178 @@
     <div class="circulo">
       <h3 class="cirNum">1</h3>
     </div>
+    <p class="parrafoFun">
+      <span class="pasos"> Paso 1 : </span> Ubica el buscador del geovisor en la
+      parte superior izquierda y escribe la localidad o el área de estudio.
+    </p>
 
-    <div class="d-flex parrafoFun">
-      <div>
-        <p class="parrafoFun ml-n2">
-          <span class="pasos"> Paso 1 : </span> Ubica el buscador del geovisor
-          en la parte superior izquierda y escribe la localidad o el área de
-          estudio.
-        </p>
-      </div>
-    </div>
     <div class="circulo">
       <h3 class="cirNum">2</h3>
     </div>
-    <div class="d-flex parrafoFun">
-      <div>
-        <p class="parrafoFun ml-n2">
-          <span class="pasos"> Paso 2 : </span> Ubicar el icono de capas
-          <span>
-            <svg
-              width="18px"
-              height="18px"
-              viewBox="-4.08 -4.08 32.16 32.16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              stroke="#000000"
-              stroke-width="0.048"
-              transform="rotate(0)"
-            >
-              <g
-                id="SVGRepo_bgCarrier"
-                stroke-width="0"
-                transform="translate(0.35999999999999943,0.35999999999999943), scale(0.97)"
-              >
-                <rect
-                  x="-4.08"
-                  y="-4.08"
-                  width="32.16"
-                  height="32.16"
-                  rx="4.1808"
-                  fill="#ebebeb"
-                  strokewidth="0"
-                ></rect>
-              </g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke="#fcfcfc"
-                stroke-width="0.144"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M11.553 1.10557C11.8346 0.964809 12.1659 0.964809 12.4475 1.10557L22.4475 6.10557C22.7862 6.27496 23.0002 6.62123 23.0002 7C23.0002 7.37877 22.7862 7.72504 22.4475 7.89443L12.4475 12.8944C12.1659 13.0352 11.8346 13.0352 11.553 12.8944L1.55303 7.89443C1.21425 7.72504 1.00024 7.37877 1.00024 7C1.00024 6.62123 1.21425 6.27496 1.55303 6.10557L11.553 1.10557ZM4.23631 7L12.0002 10.882L19.7642 7L12.0002 3.11803L4.23631 7Z"
-                  fill="#0000AF"
-                ></path>
-                <path
-                  d="M1.10579 16.5528C1.35278 16.0588 1.95345 15.8586 2.44743 16.1055L12.0002 20.8819L21.553 16.1055C22.047 15.8586 22.6477 16.0588 22.8946 16.5528C23.1416 17.0467 22.9414 17.6474 22.4474 17.8944L12.4474 22.8944C12.1659 23.0352 11.8345 23.0352 11.553 22.8944L1.55301 17.8944C1.05903 17.6474 0.858803 17.0467 1.10579 16.5528Z"
-                  fill="#0000AF"
-                ></path>
-                <path
-                  d="M2.44743 11.1055C1.95345 10.8586 1.35278 11.0588 1.10579 11.5528C0.858803 12.0467 1.05903 12.6474 1.55301 12.8944L11.553 17.8944C11.8345 18.0352 12.1659 18.0352 12.4474 17.8944L22.4474 12.8944C22.9414 12.6474 23.1416 12.0467 22.8946 11.5528C22.6477 11.0588 22.047 10.8586 21.553 11.1055L12.0002 15.8819L2.44743 11.1055Z"
-                  fill="#0000AF"
-                ></path>
-              </g>
-            </svg>
-          </span>
-          y luego seleccionar el departamento y la ciudad para acceder a los
-          tipos de estudios.
-        </p>
-      </div>
-    </div>
+    <p class="parrafoFun">
+      <span class="pasos"> Paso 2 : </span> Ubicar el icono de capas
+      <span>
+        <svg
+          width="18px"
+          height="18px"
+          viewBox="-4.08 -4.08 32.16 32.16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          stroke="#000000"
+          stroke-width="0.048"
+          transform="rotate(0)"
+        >
+          <g
+            id="SVGRepo_bgCarrier"
+            stroke-width="0"
+            transform="translate(0.35999999999999943,0.35999999999999943), scale(0.97)"
+          >
+            <rect
+              x="-4.08"
+              y="-4.08"
+              width="32.16"
+              height="32.16"
+              rx="4.1808"
+              fill="#ebebeb"
+              strokewidth="0"
+            ></rect>
+          </g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="#fcfcfc"
+            stroke-width="0.144"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M11.553 1.10557C11.8346 0.964809 12.1659 0.964809 12.4475 1.10557L22.4475 6.10557C22.7862 6.27496 23.0002 6.62123 23.0002 7C23.0002 7.37877 22.7862 7.72504 22.4475 7.89443L12.4475 12.8944C12.1659 13.0352 11.8346 13.0352 11.553 12.8944L1.55303 7.89443C1.21425 7.72504 1.00024 7.37877 1.00024 7C1.00024 6.62123 1.21425 6.27496 1.55303 6.10557L11.553 1.10557ZM4.23631 7L12.0002 10.882L19.7642 7L12.0002 3.11803L4.23631 7Z"
+              fill="#0000AF"
+            ></path>
+            <path
+              d="M1.10579 16.5528C1.35278 16.0588 1.95345 15.8586 2.44743 16.1055L12.0002 20.8819L21.553 16.1055C22.047 15.8586 22.6477 16.0588 22.8946 16.5528C23.1416 17.0467 22.9414 17.6474 22.4474 17.8944L12.4474 22.8944C12.1659 23.0352 11.8345 23.0352 11.553 22.8944L1.55301 17.8944C1.05903 17.6474 0.858803 17.0467 1.10579 16.5528Z"
+              fill="#0000AF"
+            ></path>
+            <path
+              d="M2.44743 11.1055C1.95345 10.8586 1.35278 11.0588 1.10579 11.5528C0.858803 12.0467 1.05903 12.6474 1.55301 12.8944L11.553 17.8944C11.8345 18.0352 12.1659 18.0352 12.4474 17.8944L22.4474 12.8944C22.9414 12.6474 23.1416 12.0467 22.8946 11.5528C22.6477 11.0588 22.047 10.8586 21.553 11.1055L12.0002 15.8819L2.44743 11.1055Z"
+              fill="#0000AF"
+            ></path>
+          </g>
+        </svg>
+      </span>
+      y luego seleccionar el departamento y la ciudad para acceder a los tipos
+      de estudios.
+    </p>
+
     <div class="circulo">
       <h3 class="cirNum">3</h3>
     </div>
-    <div class="d-flex parrafoFun">
-      <div>
-        <p class="parrafoFun ml-n2">
-          <span class="pasos"> Paso 3 : </span> Procedemos a activar el icono de
-          check
-          <span>
-            <svg
-              width="18px"
-              height="18px"
-              viewBox="-3 -3 26.00 26.00"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
+
+    <p class="parrafoFun">
+      <span class="pasos"> Paso 3 : </span> Procedemos a activar el icono de
+      check
+      <span>
+        <svg
+          width="18px"
+          height="18px"
+          viewBox="-3 -3 26.00 26.00"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          stroke="#FFFFFF"
+        >
+          <g
+            id="SVGRepo_bgCarrier"
+            stroke-width="0"
+            transform="translate(1.4000000000000004,1.4000000000000004), scale(0.86)"
+          >
+            <rect
+              x="-3"
+              y="-3"
+              width="26.00"
+              height="26.00"
+              rx="4.16"
+              fill="#0000AF"
+              strokewidth="0"
+            ></rect>
+          </g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
               stroke="#FFFFFF"
-            >
-              <g
-                id="SVGRepo_bgCarrier"
-                stroke-width="0"
-                transform="translate(1.4000000000000004,1.4000000000000004), scale(0.86)"
-              >
-                <rect
-                  x="-3"
-                  y="-3"
-                  width="26.00"
-                  height="26.00"
-                  rx="4.16"
-                  fill="#0000AF"
-                  strokewidth="0"
-                ></rect>
-              </g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                <path
-                  stroke="#FFFFFF"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 5L8 15l-5-4"
-                ></path>
-              </g>
-            </svg>
-          </span>
-          sobre los estudios para visualizarlos en el mapa.
-        </p>
-      </div>
-    </div>
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 5L8 15l-5-4"
+            ></path>
+          </g>
+        </svg>
+      </span>
+      sobre los estudios para visualizarlos en el mapa.
+    </p>
+
     <div class="circulo">
       <h3 class="cirNum">4</h3>
     </div>
-    <div class="d-flex parrafoFun">
-      <div>
-        <p class="parrafoFun ml-n2">
-          <span class="pasos"> Paso 4 : </span> Luego, ubicaremos el icono de
-          “Descripción y Leyenda”
-          <span>
-            <svg
-              width="18px"
-              height="18px"
-              viewBox="-6.4 -6.4 76.80 76.80"
-              xmlns="http://www.w3.org/2000/svg"
-              stroke-width="3"
-              stroke="#0000AF"
-              fill="none"
-              transform="matrix(-1, 0, 0, 1, 0, 0)"
-            >
-              <g
-                id="SVGRepo_bgCarrier"
-                stroke-width="0"
-                transform="translate(0,0), scale(1)"
-              >
-                <rect
-                  x="-6.4"
-                  y="-6.4"
-                  width="76.80"
-                  height="76.80"
-                  rx="10.752"
-                  fill="#ebebeb"
-                  strokewidth="0"
-                ></rect>
-              </g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke="#CCCCCC"
-                stroke-width="2.432"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                <line x1="50.69" y1="32" x2="56.32" y2="32"></line>
-                <line x1="7.68" y1="32" x2="38.69" y2="32"></line>
-                <line x1="26.54" y1="15.97" x2="56.32" y2="15.97"></line>
-                <line x1="7.68" y1="15.97" x2="14.56" y2="15.97"></line>
-                <line x1="35" y1="48.03" x2="56.32" y2="48.03"></line>
-                <line x1="7.68" y1="48.03" x2="23" y2="48.03"></line>
-                <circle cx="20.55" cy="15.66" r="6"></circle>
-                <circle cx="44.69" cy="32" r="6"></circle>
-                <circle cx="29" cy="48.03" r="6"></circle>
-              </g>
-            </svg>
-          </span>
-          para ver más información de la zonificación.
-        </p>
-      </div>
-    </div>
 
-    <br />
-    <br />
-    <p class="parrafoFun">Tambien puedes mirar nuestro videotutorial aqui.</p>
-    <br />
+    <p class="parrafoFun mb-3">
+      <span class="pasos"> Paso 4 : </span> Luego, ubicaremos el icono de
+      “Descripción y Leyenda”
+      <span>
+        <svg
+          width="18px"
+          height="18px"
+          viewBox="-6.4 -6.4 76.80 76.80"
+          xmlns="http://www.w3.org/2000/svg"
+          stroke-width="3"
+          stroke="#0000AF"
+          fill="none"
+          transform="matrix(-1, 0, 0, 1, 0, 0)"
+        >
+          <g
+            id="SVGRepo_bgCarrier"
+            stroke-width="0"
+            transform="translate(0,0), scale(1)"
+          >
+            <rect
+              x="-6.4"
+              y="-6.4"
+              width="76.80"
+              height="76.80"
+              rx="10.752"
+              fill="#ebebeb"
+              strokewidth="0"
+            ></rect>
+          </g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="#CCCCCC"
+            stroke-width="2.432"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <line x1="50.69" y1="32" x2="56.32" y2="32"></line>
+            <line x1="7.68" y1="32" x2="38.69" y2="32"></line>
+            <line x1="26.54" y1="15.97" x2="56.32" y2="15.97"></line>
+            <line x1="7.68" y1="15.97" x2="14.56" y2="15.97"></line>
+            <line x1="35" y1="48.03" x2="56.32" y2="48.03"></line>
+            <line x1="7.68" y1="48.03" x2="23" y2="48.03"></line>
+            <circle cx="20.55" cy="15.66" r="6"></circle>
+            <circle cx="44.69" cy="32" r="6"></circle>
+            <circle cx="29" cy="48.03" r="6"></circle>
+          </g>
+        </svg>
+      </span>
+      para ver más información de la zonificación.
+    </p>
+
+    <br >
 
     <btn
       id="btnAcercade"
@@ -254,7 +238,7 @@
     <br />
     <br />
     <br />
-    <br />
+
   </div>
 </template>
   
@@ -300,10 +284,9 @@ export default {
   width: 27px;
   height: 27px;
   border-radius: 50%;
-  margin: 20px 0px 5px 36px;
+  margin: 20px 0px 5px 44px;
 }
 .cirNum {
-  text-align: center;
   text-align: center;
   line-height: 26.33px;
   font-style: normal;

@@ -22,24 +22,36 @@
         con cada método, permiten los suelos con diferente comportamiento
         dinámico ante la ocurrencia de sismos.
       </p>
-      <p class="parrafoGeo mt-5 pb-12">
+      <p class="parrafoGeo mt-5 pb-8">
         Este aporte a la Gestion del Riesgo de Desastres debe ser considerado
         por la población y autoridades regionales y locales para la correcta
         implementación de acciones y medidas para reducir el riesgo ante la
         ocurrencia de sismos.
       </p>
-      
-      <br>
-      <br>
-      <br>
-    
+      <btn
+        id="btnFunci"
+        class="my-linktop"
+        @click="recepFunc"
+        style="color: #0000af"
+        >Ver Guia de uso</btn
+      >
+      <br />
 
+      <br />
+
+      <br />
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    recepFunc() {
+      document.querySelectorAll("#func").forEach((boton) => boton.click());
+    },
+  },
+};
 </script>
 
 <style>
@@ -48,7 +60,6 @@ export default {};
   font-size: 20px;
   line-height: 26px;
   color: #0a1fc2;
-  margin-left: 25px;
   margin-bottom: 12px;
   margin-left: 45px;
 }
@@ -72,26 +83,39 @@ export default {};
   background-position: center; /* Alinea la imagen al centro */
   background-color: #0077be; /* Color de fondo */
   background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 1)
-  ),
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1)
+    ),
     url(https://i.ibb.co/BrFG4zN/image.png); /* Agrega un degradado */
-  background-position-y:-200px ;
-
+  background-position-y: -200px;
 }
 ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #bbbbbb;
-    border-radius: 5px;
+  background-color: #bbbbbb;
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #888;
+  background-color: #888;
 }
-
+#btnFunci {
+  width: 141.98px;
+  height: 24.73px;
+  background: #ffffff;
+  border: 0.426437px solid rgba(0, 33, 79, 0.6);
+  border-radius: 4.26437px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 45px;
+}
 </style>

@@ -18,12 +18,14 @@
       <div class="opciones">
         <a id="acerca" class="my-linktop" @click="btnGeofi()">Acerca de</a>
         <div id="dividermenutopL" class="border border-vertical" />
+        <a id="func" class="my-linktop" @click="btnFuncion()">Guía de uso</a>
+        <div id="dividermenutopL" class="border border-vertical" />
         <a
-          id="func"
+          id="contacto"
           class="my-linktop"
-          @click="btnFuncion()"
+          @click="btnCont()"
           :style="{ marginRight: '50px' }"
-          >Guía de uso</a
+          >Contacto</a
         >
       </div>
     </div>
@@ -89,6 +91,7 @@
     >
       <contFuncion v-show="mostrarFun"></contFuncion>
       <contGeofisico v-show="mostrarGeo"></contGeofisico>
+      <contContacto v-show="mostrarCont"></contContacto>
     </v-navigation-drawer>
     <!-- END MENU -->
 
@@ -107,7 +110,7 @@
       <iframe
         id="inlineFrameExample"
         src="https://ide.igp.gob.pe/geovisor/estudios-cts"
-        style="width: 100%; height: 100%"
+        style="width: 100%; height: 100%; border: 0"
         @load="iframeLoad"
       ></iframe>
     </div>
@@ -118,6 +121,7 @@
 <script>
 import contFuncion from "./contFuncion.vue";
 import contGeofisico from "./contGeofisico.vue";
+import contContacto from "./contContacto.vue";
 
 window.onload = function () {
   var iframe = document.getElementById("inlineFrameExample");
@@ -143,6 +147,7 @@ export default {
   components: {
     contFuncion,
     contGeofisico,
+    contContacto,
   },
   data() {
     return {
@@ -150,8 +155,10 @@ export default {
       drawer: false,
       mostrarGeo: true,
       mostrarFun: false,
+      mostrarCont: false,
       anchoMenu: "450px",
       elementos: false,
+      indexflecha: -1,
     };
   },
   methods: {
@@ -159,11 +166,19 @@ export default {
       setTimeout(() => {
         this.positivo();
         this.drawer = true;
+        this.indexflecha = 1;
       }, 4000);
     },
     btnGeofi() {
       this.ocultarTodo();
       this.mostrarGeo = true;
+      if (this.elementos === false) {
+        this.positivo();
+      }
+    },
+    btnCont() {
+      this.ocultarTodo();
+      this.mostrarCont = true;
       if (this.elementos === false) {
         this.positivo();
       }
@@ -179,6 +194,7 @@ export default {
     ocultarTodo() {
       this.mostrarGeo = false;
       this.mostrarFun = false;
+      this.mostrarCont = false;
       this.drawer = true;
     },
 
@@ -264,6 +280,7 @@ export default {
   position: absolute;
   width: 60.3px;
   height: 49.98px;
+  z-index: v-bind(indexflecha);
 }
 #iconFlecha {
   margin-left: 30px;
