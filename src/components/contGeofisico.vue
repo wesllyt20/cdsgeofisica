@@ -1,32 +1,35 @@
 <template>
   <div>
-    <div class="bg-image"></div>
-    <h2 id="tiGeo">¿Qué es CDS - IGP?</h2>
+    <div class="bg-image2"></div>
+    <h2 id="tiGeo" class="">
+      Estudios sobre Comportamiento
+      <br />
+      Dinámico de Suelos
+      <br />
+      <b>CDS-IGP</b>
+    </h2>
+    <br />
     <div id="parGeo" class="mb-5">
       <p class="parrafoGeo">
-        Dentro del Programa Presupuestal por Resultados Nº068 "Reducción de la
-        Vulnerabilidad y Atención de Emergencias por Desastres", el Instituto
-        Gerofísico del Perú (IGP) viene desarrollando la actividad "Generación
-        de Estudios Territoriales de Peligro Sísmico" a fin de obtener los Mapas
-        de Zonificación Geofísica - Geotécnica (Comportamiento Dinámico de
-        Suelo) para áreas urbanas ubicadas en zonas con alto potencial sísmico.
+        En el PPR Nº068, &quot;Reducción de la Vulnerabilidad y Atención de
+        Emergencias por Desastres&quot;, el Instituto Geofísico del Perú (IGP)
+        desarrolla la actividad que permite obtener los Mapas de Zonificación
+        Geofísica - Geotécnica (Comportamiento Dinámico de Suelo) para áreas
+        urbanas ubicadas en zonas de alto potencial sísmico.
       </p>
       <p class="parrafoGeo mt-5">
-        Como producto de los estudios de Zonificación Geofísica – Geotécnica,
-        estos mapas permiten tener mayor conocimiento sobre la estructura y
+        Estos mapas permiten tener mayor conocimiento sobre la estructura y
         propiedades físicas de los suelos sobre los cuales se encuentran las
-        áreas urbanas y/o futuras áreas de expansión. Para ello el IGP hace uso
-        de diversos métodos geofísicos (razones espectrales, sísmica refracción,
-        tomografía eléctrica y georadar) y geotécnicos (geología, geodinámica,
-        geomorfología y geotecnia). La correlación de los resultados obtenidos
-        con cada método, permiten los suelos con diferente comportamiento
-        dinámico ante la ocurrencia de sismos.
+        áreas urbanas y/o futuras áreas de expansión. Para ello, el IGP
+        correlaciona los resultados obtenidos con la aplicación de diversos
+        métodos geofísicos y geotécnicos con el fin de identificar y clasificar
+        los suelos con diferente comportamiento dinámico ante la ocurrencia de
+        sismos.
       </p>
       <p class="parrafoGeo mt-5 pb-8">
         Este aporte a la Gestion del Riesgo de Desastres debe ser considerado
-        por la población y autoridades regionales y locales para la correcta
-        implementación de acciones y medidas para reducir el riesgo ante la
-        ocurrencia de sismos.
+        por la población y autoridades para la correcta implementación de
+        acciones y medidas para reducir el riesgo ante sismos.
       </p>
       <btn
         id="btnFunci"
@@ -75,20 +78,19 @@ export default {
   margin-left: 45px;
   margin-right: 45px;
 }
-.bg-image {
-  background-image: url(https://i.ibb.co/BrFG4zN/image.png);
+.bg-image2 {
+  background-image: url('https://ide.igp.gob.pe/geovisor/cds-igp/playa.webp');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 200px; /* Altura ajustada */
-  background-position: center; /* Alinea la imagen al centro */
+  height: 200px; /* Ajusta la altura según sea necesario */
+  background-position: center top -50px; /* Mueve la imagen hacia arriba en 50 píxeles */
   background-color: #0077be; /* Color de fondo */
   background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 1)
     ),
-    url(https://i.ibb.co/BrFG4zN/image.png); /* Agrega un degradado */
-  background-position-y: -200px;
+    url('https://ide.igp.gob.pe/geovisor/cds-igp/playa.webp'); /* Agrega un degradado */
 }
 ::-webkit-scrollbar {
   width: 8px;
@@ -117,5 +119,8 @@ export default {
   align-items: center;
   justify-content: center;
   margin-left: 45px;
+}
+#btnFunci:hover{
+  background-color: #EDF7FF;
 }
 </style>

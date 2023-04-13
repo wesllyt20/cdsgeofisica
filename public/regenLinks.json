@@ -1,0 +1,358 @@
+{
+    "LIMA": [
+        {
+            "objectid": 3,
+            "ciudad": "Quilmana",
+            "ano": 2016,
+            "documento": "http://hdl.handle.net/20.500.12816/5171"
+        },
+        {
+            "objectid": 6,
+            "ciudad": "Nuevo Imperial",
+            "ano": 2016,
+            "documento": "http://hdl.handle.net/20.500.12816/5172"
+        },
+        {
+            "objectid": 16,
+            "ciudad": "San Antonio",
+            "ano": 2016,
+            "documento": "http://hdl.handle.net/20.500.12816/5173"
+        },
+        {
+            "objectid": 24,
+            "ciudad": "Coayllo",
+            "ano": 2016,
+            "documento": "http://hdl.handle.net/20.500.12816/5175"
+        },
+        {
+            "objectid": 25,
+            "ciudad": "Chilca",
+            "ano": 2016,
+            "documento": "http://hdl.handle.net/20.500.12816/5176"
+        },
+        {
+            "objectid": 26,
+            "ciudad": "Imperial",
+            "ano": 2016,
+            "documento": "http://hdl.handle.net/20.500.12816/5177"
+        },
+        {
+            "objectid": 39,
+            "ciudad": "San Luis",
+            "ano": 2016,
+            "documento": "http://hdl.handle.net/20.500.12816/5174"
+        },
+        {
+            "objectid": 2,
+            "ciudad": "Barranca",
+            "ano": 2012,
+            "documento": "http://hdl.handle.net/20.500.12816/1331"
+        },
+        {
+            "objectid": 11,
+            "ciudad": "Cerro Azul",
+            "ano": 2015,
+            "documento": "http://hdl.handle.net/20.500.12816/1341"
+        },
+        {
+            "objectid": 37,
+            "ciudad": "Chaclacayo",
+            "ano": 2012,
+            "documento": "http://hdl.handle.net/20.500.12816/1194"
+        },
+        {
+            "objectid": 27,
+            "ciudad": "Chancay",
+            "ano": 2015,
+            "documento": "http://hdl.handle.net/20.500.12816/1345"
+        },
+        {
+            "objectid": 28,
+            "ciudad": "Huaral",
+            "ano": 2015,
+            "documento": "http://hdl.handle.net/20.500.12816/1355"
+        },
+        {
+            "objectid": 29,
+            "ciudad": "Mala",
+            "ano": 2015,
+            "documento": "http://hdl.handle.net/20.500.12816/1367"
+        },
+        {
+            "objectid": 1,
+            "ciudad": "Asia",
+            "ano": 2015,
+            "documento": "http://hdl.handle.net/20.500.12816/1329"
+        },
+        {
+            "objectid": 4,
+            "ciudad": "Huacho",
+            "ano": 2013,
+            "documento": "http://hdl.handle.net/20.500.12816/1351"
+        },
+        {
+            "objectid": 8,
+            "ciudad": "Cañete",
+            "ano": 2015,
+            "documento": "http://hdl.handle.net/20.500.12816/1357"
+        },
+        {
+            "objectid": 48,
+            "ciudad": "Carapongo",
+            "ano": 2012,
+            "documento": "http://hdl.handle.net/20.500.12816/1192"
+        },
+        {
+            "objectid": 47,
+            "ciudad": "Chosica",
+            "ano": 2012,
+            "documento": "http://hdl.handle.net/20.500.12816/1196"
+        },
+        {
+            "objectid": 49,
+            "ciudad": "Huaycan",
+            "ano": 2012,
+            "documento": "http://hdl.handle.net/20.500.12816/1198"
+        },
+        {
+            "objectid": 52,
+            "ciudad": "Lunahuana",
+            "ano": 2015,
+            "documento": "http://hdl.handle.net/20.500.12816/1363"
+        }
+    ],
+    "TACNA": [
+        {
+            "objectid": 14,
+            "ciudad": "Ciudad Nueva",
+            "ano": 2017,
+            "documento": "http://hdl.handle.net/20.500.12816/5181"
+        },
+        {
+            "objectid": 21,
+            "ciudad": "Alto de la Alianza",
+            "ano": 2017,
+            "documento": "http://hdl.handle.net/20.500.12816/5179"
+        },
+        {
+            "objectid": 22,
+            "ciudad": "Boca del Rio",
+            "ano": 2017,
+            "documento": "http://hdl.handle.net/20.500.12816/5180"
+        },
+        {
+            "objectid": 23,
+            "ciudad": "Tacna",
+            "ano": 2017,
+            "documento": "http://hdl.handle.net/20.500.12816/5184"
+        },
+        {
+            "objectid": 34,
+            "ciudad": "Ite",
+            "ano": 2017,
+            "documento": "http://hdl.handle.net/20.500.12816/5186"
+        }
+    ],
+    "ICA": [
+        {
+            "objectid": 15,
+            "ciudad": "Humay",
+            "ano": 2016,
+            "documento": "http://hdl.handle.net/20.500.12816/5170"
+        },
+        {
+            "objectid": 17,
+            "ciudad": "San Clemente",
+            "ano": 2016,
+            "documento": "http://hdl.handle.net/20.500.12816/5178"
+        }
+    ],
+    "MOQUEGUA": [
+        {
+            "objectid": 18,
+            "ciudad": "Ilo",
+            "ano": 2017,
+            "documento": "http://hdl.handle.net/20.500.12816/5182"
+        },
+        {
+            "objectid": 19,
+            "ciudad": "Torata",
+            "ano": 2017,
+            "documento": "http://hdl.handle.net/20.500.12816/5185"
+        },
+        {
+            "objectid": 20,
+            "ciudad": "Moquegua",
+            "ano": 2017,
+            "documento": "http://hdl.handle.net/20.500.12816/5183"
+        }
+    ],
+    "PIURA": [
+        {
+            "objectid": 30,
+            "ciudad": "Castilla",
+            "ano": 2018,
+            "documento": "http://hdl.handle.net/20.500.12816/5186"
+        },
+        {
+            "objectid": 31,
+            "ciudad": "Catacaos",
+            "ano": 2018,
+            "documento": "http://hdl.handle.net/20.500.12816/5187"
+        },
+        {
+            "objectid": 32,
+            "ciudad": "Chulucanas",
+            "ano": 2018,
+            "documento": "http://hdl.handle.net/20.500.12816/5188"
+        },
+        {
+            "objectid": 33,
+            "ciudad": "Paita",
+            "ano": 2018,
+            "documento": "http://hdl.handle.net/20.500.12816/5189"
+        },
+        {
+            "objectid": 40,
+            "ciudad": "Piura",
+            "ano": 2018,
+            "documento": "http://hdl.handle.net/20.500.12816/5190"
+        },
+        {
+            "objectid": 41,
+            "ciudad": "Sechura",
+            "ano": 2018,
+            "documento": "http://hdl.handle.net/20.500.12816/5191"
+        },
+        {
+            "objectid": 42,
+            "ciudad": "Sullana",
+            "ano": 2018,
+            "documento": "http://hdl.handle.net/20.500.12816/5192"
+        },
+        {
+            "objectid": 43,
+            "ciudad": "La Arena",
+            "ano": 2019,
+            "documento": "http://hdl.handle.net/20.500.12816/5193"
+        },
+        {
+            "objectid": 44,
+            "ciudad": "La Union",
+            "ano": 2019,
+            "documento": "http://hdl.handle.net/20.500.12816/5194"
+        },
+        {
+            "objectid": 45,
+            "ciudad": "Máncora",
+            "ano": 2019,
+            "documento": "http://hdl.handle.net/20.500.12816/5195"
+        },
+        {
+            "objectid": 46,
+            "ciudad": "Morropon",
+            "ano": 2019,
+            "documento": "http://hdl.handle.net/20.500.12816/5196"
+        },
+        {
+            "objectid": 53,
+            "ciudad": "Querecotillo",
+            "ano": 2019,
+            "documento": "http://hdl.handle.net/20.500.12816/5197"
+        },
+        {
+            "objectid": 55,
+            "ciudad": "Talara",
+            "ano": 2019,
+            "documento": "http://hdl.handle.net/20.500.12816/5198"
+        },
+        {
+            "objectid": 56,
+            "ciudad": "Tambo Grande",
+            "ano": 2019,
+            "documento": "http://hdl.handle.net/20.500.12816/5199"
+        },
+        {
+            "objectid": 57,
+            "ciudad": "Las Lomas",
+            "ano": 2019,
+            "documento": "http://hdl.handle.net/20.500.12816/5200"
+        }
+    ],
+    "AREQUIPA": [
+        {
+            "objectid": 5,
+            "ciudad": "Acari",
+            "ano": 2014,
+            "documento": "http://hdl.handle.net/20.500.12816/1325"
+        },
+        {
+            "objectid": 7,
+            "ciudad": "Arequipa",
+            "ano": 2014,
+            "documento": "http://hdl.handle.net/20.500.12816/1327"
+        },
+        {
+            "objectid": 12,
+            "ciudad": "Bella Union",
+            "ano": 2014,
+            "documento": "http://hdl.handle.net/20.500.12816/1333"
+        },
+        {
+            "objectid": 13,
+            "ciudad": "Camana",
+            "ano": 2014,
+            "documento": "http://hdl.handle.net/20.500.12816/1335"
+        },
+        {
+            "objectid": 38,
+            "ciudad": "Yauca",
+            "ano": 2014,
+            "documento": "http://hdl.handle.net/20.500.12816/1369"
+        },
+        {
+            "objectid": 54,
+            "ciudad": "Chala",
+            "ano": 2014,
+            "documento": "http://hdl.handle.net/20.500.12816/1343"
+        },
+        {
+            "objectid": 50,
+            "ciudad": "Cocachacra",
+            "ano": 2014,
+            "documento": "http://hdl.handle.net/20.500.12816/1359"
+        },
+        {
+            "objectid": 51,
+            "ciudad": "Punta de Bombon",
+            "ano": 2014,
+            "documento": "http://hdl.handle.net/20.500.12816/1353"
+        }
+    ],
+    "ANCASH": [
+        {
+            "objectid": 36,
+            "ciudad": "Casma",
+            "ano": 2016,
+            "documento": "http://hdl.handle.net/20.500.12816/1339"
+        },
+        {
+            "objectid": 10,
+            "ciudad": "Huarmey",
+            "ano": 2013,
+            "documento": "http://hdl.handle.net/20.500.12816/1361"
+        },
+        {
+            "objectid": 9,
+            "ciudad": "Chimbote",
+            "ano": 2013,
+            "documento": "http://hdl.handle.net/20.500.12816/1349"
+        },
+        {
+            "objectid": 35,
+            "ciudad": "Nuevo Chimbote",
+            "ano": 2013,
+            "documento": "http://hdl.handle.net/20.500.12816/1368"
+        }
+    ]
+}

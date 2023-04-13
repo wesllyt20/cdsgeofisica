@@ -313,4 +313,7 @@ export default {
   justify-content: center;
   margin-left: 45px;
 }
+#btnAcercade:hover{
+  background-color: #EDF7FF;
+}
 </style>

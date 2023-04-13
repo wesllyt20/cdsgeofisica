@@ -20,7 +20,7 @@
             viewBox="-3.36 -3.36 54.72 54.72"
             xmlns="http://www.w3.org/2000/svg"
             fill="#00214F"
-            style="vertical-align: middle; margin-bottom: 2px"
+            style="vertical-align: middle; margin: 0px 2px 2px 0px"
           >
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g
@@ -57,7 +57,7 @@
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             fill="#00214F"
-            style="vertical-align: middle; margin-bottom: 2px"
+            style="vertical-align: middle; margin: 0px 2px 2px 0px"
           >
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g
@@ -95,7 +95,7 @@
             viewBox="-2.88 -2.88 37.76 37.76"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
-            style="vertical-align: middle; margin-bottom: 2px"
+            style="vertical-align: middle; margin: 0px 2px 2px 0px"
           >
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g
@@ -123,7 +123,7 @@
             viewBox="-194.56 -194.56 901.12 901.12"
             xml:space="preserve"
             stroke="#ffffff"
-            style="vertical-align: middle; margin-bottom: 2px"
+            style="vertical-align: middle; margin: 0px 2px 2px 0px"
           >
             <g
               id="SVGRepo_bgCarrier"
@@ -164,7 +164,7 @@
             viewBox="-3.2 -3.2 38.40 38.40"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
-            style="vertical-align: middle; margin-bottom: 2px"
+            style="vertical-align: middle; margin: 0px 2px 2px 0px"
           >
             <g
               id="SVGRepo_bgCarrier"
@@ -207,7 +207,7 @@
             xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="-3.2 -3.2 38.40 38.40"
             xml:space="preserve"
-            style="vertical-align: middle; margin-bottom: 2px"
+            style="vertical-align: middle; margin: 0px 2px 2px 0px"
           >
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g
@@ -221,7 +221,7 @@
               ></path>
             </g>
           </svg>
-          <a href="https://www.flickr.com/people/156092703@N08/" target="_blank"> Flicker</a>
+          <a class="estiloA" href="https://www.flickr.com/people/156092703@N08/" target="_blank"> Flicker</a>
         </ul>
       </ol>
     </div>
@@ -293,7 +293,7 @@ export default {};
 #tiLista a {
   color: black;
   text-decoration: none;
-  cursor: default;
+  cursor: pointer;
 }
 
 .ulLista {
@@ -302,8 +302,8 @@ export default {};
   font-weight: 400;
   font-size: 12px;
   line-height: 150%;
-
   color: #00214f;
 }
+
 </style>
   

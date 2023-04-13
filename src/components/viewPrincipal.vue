@@ -20,6 +20,8 @@
         <div id="dividermenutopL" class="border border-vertical" />
         <a id="func" class="my-linktop" @click="btnFuncion()">Guía de uso</a>
         <div id="dividermenutopL" class="border border-vertical" />
+        <a id="func" class="my-linktop" @click="btnListado()">Informes</a>
+        <div id="dividermenutopL" class="border border-vertical" />
         <a
           id="contacto"
           class="my-linktop"
@@ -92,6 +94,7 @@
       <contFuncion v-show="mostrarFun"></contFuncion>
       <contGeofisico v-show="mostrarGeo"></contGeofisico>
       <contContacto v-show="mostrarCont"></contContacto>
+      <contListado v-show="mostrarList"></contListado>
     </v-navigation-drawer>
     <!-- END MENU -->
 
@@ -122,6 +125,7 @@
 import contFuncion from "./contFuncion.vue";
 import contGeofisico from "./contGeofisico.vue";
 import contContacto from "./contContacto.vue";
+import contListado from "./contListado.vue";
 
 window.onload = function () {
   var iframe = document.getElementById("inlineFrameExample");
@@ -134,11 +138,11 @@ window.onload = function () {
 const ids = [
   "widgets_ZoomSlider_Widget_72",
   "widgets_HomeButton_Widget_68",
-  "widgets_Search_Widget_60",
   "dijit__WidgetBase_0",
-  "_62_panel",
+  "dijit__WidgetBase_1",
   "widgets_Scalebar_Widget_59",
   "widgets_Coordinate_Widget_61",
+  "_62_panel",
 ];
 
 export default {
@@ -148,6 +152,7 @@ export default {
     contFuncion,
     contGeofisico,
     contContacto,
+    contListado,
   },
   data() {
     return {
@@ -156,6 +161,7 @@ export default {
       mostrarGeo: true,
       mostrarFun: false,
       mostrarCont: false,
+      mostrarList: false,
       anchoMenu: "450px",
       elementos: false,
       indexflecha: -1,
@@ -190,11 +196,19 @@ export default {
         this.positivo();
       }
     },
+    btnListado() {
+      this.ocultarTodo();
+      this.mostrarList = true;
+      if (this.elementos === false) {
+        this.positivo();
+      }
+    },
 
     ocultarTodo() {
       this.mostrarGeo = false;
       this.mostrarFun = false;
       this.mostrarCont = false;
+      this.mostrarList = false;
       this.drawer = true;
     },
 
@@ -220,7 +234,7 @@ export default {
     },
 
     movewidgets(displacement) {
-      const iframe = document.getElementById("inlineFrameExample");
+      const iframe = document.getElementById("inlineFrameExample"); 
       const idocument = iframe.contentWindow.document;
 
       ids.forEach((id) => {
@@ -229,6 +243,10 @@ export default {
           widget = idocument.getElementById(id);
         }
         console.log("--->", widget);
+        var boton = iframe.contentWindow.document.getElementById(
+          "dijit__WidgetBase_1"
+        ); // AQUI JALAS EL ID PARA CLICKEAR DENTRO DEL DOOM, RECUERDA QUE TMB DEBES RE CLICKEAR EL FILTRO XD
+        boton.click();
         let left = 0;
         if (!widget.style.inset) {
           left = parseInt(widget.style.left.slice(0, 3));
@@ -349,7 +367,6 @@ export default {
 }
 
 .my-linktop:hover {
-  cursor: pointer;
   color: #0032ff;
   font-weight: 600;
 }
@@ -390,7 +407,6 @@ export default {
 }
 
 .my-link:hover {
-  cursor: pointer;
   color: #0032ff;
   font-weight: 600;
 }
