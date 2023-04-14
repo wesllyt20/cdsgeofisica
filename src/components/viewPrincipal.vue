@@ -237,11 +237,11 @@ export default {
     },
     positivo() {
       this.elementos = true;
-      // this.movewidgets(465);
+       this.movewidgets(465);
     },
     negativo() {
       this.elementos = false;
-      //  this.movewidgets(-465);
+        this.movewidgets(-465);
     },
     funcionFlechaFalse() {
       console.log("ESTE ES",this.drawer);

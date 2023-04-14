@@ -8,7 +8,7 @@
       </p>
     </div>
     <h2 id="subtiList">Filtro por región:</h2>
-    <select class="select-css" v-model="selectedRegion">
+    <select class="select-css" v-model="selectedRegion"  @change="goToFirstPage">
       <option v-for="(region, index) in regions" :key="index" :value="index">
         {{ region.nombre }}
       </option>
@@ -40,11 +40,12 @@
         </tbody>
       </table>
     </div>
-    <div class="pagination">
-      <button @click="previousPage">Anterior</button>
-      <span style="color: #0032ff">{{ currentPage }}/{{ totalPages }}</span>
-      <button @click="nextPage">Siguiente</button>
-    </div>
+    <div v-if="totalPages > 1" class="pagination">
+  <button @click="previousPage">Anterior</button>
+  <span style="color: #0032ff">{{ currentPage }}/{{ totalPages }}</span>
+  <button @click="nextPage">Siguiente</button>
+</div>
+
   </div>
 </template>
   
@@ -106,6 +107,9 @@ export default {
         this.currentPage += 1;
       }
     },
+    goToFirstPage() {
+      this.currentPage = 1;
+    }
   },
   mounted() {
     this.fetchData();
