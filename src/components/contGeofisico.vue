@@ -31,12 +31,12 @@
         por la población y autoridades para la correcta implementación de
         acciones y medidas para reducir el riesgo ante sismos.
       </p>
-      <btn
+      <a
         id="btnFunci"
         class="my-linktop"
         @click="recepFunc"
         style="color: #0000af"
-        >Ver Guia de uso</btn
+        >Ver Guia de uso</a
       >
       <br />
 

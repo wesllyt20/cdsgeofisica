@@ -20,7 +20,7 @@
         <div id="dividermenutopL" class="border border-vertical" />
         <a id="func" class="my-linktop" @click="btnFuncion()">Guía de uso</a>
         <div id="dividermenutopL" class="border border-vertical" />
-        <a id="func" class="my-linktop" @click="btnListado()">Informes</a>
+        <a id="listado" class="my-linktop" @click="btnListado()">Informes</a>
         <div id="dividermenutopL" class="border border-vertical" />
         <a
           id="contacto"
@@ -143,6 +143,7 @@ const ids = [
   "widgets_Scalebar_Widget_59",
   "widgets_Coordinate_Widget_61",
   "_62_panel",
+  "_63_panel",
 ];
 
 export default {
@@ -176,6 +177,8 @@ export default {
       }, 4000);
     },
     btnGeofi() {
+      this.funcionFlechaFalse();
+
       this.ocultarTodo();
       this.mostrarGeo = true;
       if (this.elementos === false) {
@@ -183,26 +186,34 @@ export default {
       }
     },
     btnCont() {
+      this.funcionFlechaFalse();
+
       this.ocultarTodo();
       this.mostrarCont = true;
       if (this.elementos === false) {
         this.positivo();
       }
     },
+    btnListado() {
+      this.funcionFlechaFalse();
+      
+      this.ocultarTodo();
+      this.mostrarList = true;
+      if (this.elementos === false) {
+        this.positivo();
+        
+      }
+    },
     btnFuncion() {
+      this.funcionFlechaFalse();
+
       this.ocultarTodo();
       this.mostrarFun = true;
       if (this.elementos === false) {
         this.positivo();
       }
     },
-    btnListado() {
-      this.ocultarTodo();
-      this.mostrarList = true;
-      if (this.elementos === false) {
-        this.positivo();
-      }
-    },
+   
 
     ocultarTodo() {
       this.mostrarGeo = false;
@@ -226,15 +237,24 @@ export default {
     },
     positivo() {
       this.elementos = true;
-      this.movewidgets(465);
+      // this.movewidgets(465);
     },
     negativo() {
       this.elementos = false;
-      this.movewidgets(-465);
+      //  this.movewidgets(-465);
+    },
+    funcionFlechaFalse() {
+      console.log("ESTE ES",this.drawer);
+      if (this.drawer === false) {
+        console.log("AQUI SI EJECUTO ")
+      this.imageFlipped = !this.imageFlipped;
+        const iconFlecha = document.querySelector("#iconFlecha");
+        iconFlecha.classList.toggle("rotate-180", this.imageFlipped);
+      }
     },
 
     movewidgets(displacement) {
-      const iframe = document.getElementById("inlineFrameExample"); 
+      const iframe = document.getElementById("inlineFrameExample");
       const idocument = iframe.contentWindow.document;
 
       ids.forEach((id) => {
@@ -243,10 +263,15 @@ export default {
           widget = idocument.getElementById(id);
         }
         console.log("--->", widget);
-        var boton = iframe.contentWindow.document.getElementById(
+        var botonFiltro = iframe.contentWindow.document.getElementById(
           "dijit__WidgetBase_1"
-        ); // AQUI JALAS EL ID PARA CLICKEAR DENTRO DEL DOOM, RECUERDA QUE TMB DEBES RE CLICKEAR EL FILTRO XD
-        boton.click();
+        );
+
+        botonFiltro.click();
+        var botonLeyenda = iframe.contentWindow.document.getElementById(
+          "dijit__WidgetBase_0"
+        );
+        botonLeyenda.click();
         let left = 0;
         if (!widget.style.inset) {
           left = parseInt(widget.style.left.slice(0, 3));
@@ -263,6 +288,7 @@ export default {
   watch: {
     drawer(val) {
       this.railVariantLeft = val ? 260 : 10;
+      console.log(val)
     },
   },
 };

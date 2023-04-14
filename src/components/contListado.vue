@@ -17,11 +17,11 @@
     <div class="table-container">
       <table>
         <thead>
-          <tr class="ml-5" style="color: #0032ff">
-            <th>#</th>
-            <th class="text-start">Ciudad</th>
-            <th>Año</th>
-            <th>Acción</th>
+          <tr class="" style="color: #0032ff; ">
+            <th style="width: 40px">#</th>
+            <th class="text-start" style="width: 150px">Ciudad</th>
+            <th style="width: 90px;">Año</th>
+            <th style="width: 30px">Acción</th>
           </tr>
         </thead>
         <tbody>
@@ -34,7 +34,6 @@
             <td class="text-start">{{ item.ciudad }}</td>
             <td>{{ item.ano }}</td>
             <td>
-           
               <a :href="`${item.documento}`" target="_blank">Ver</a>
             </td>
           </tr>
@@ -86,6 +85,7 @@ export default {
   methods: {
     async fetchData() {
       const { data } = await axios.get(
+        //"https://ide.igp.gob.pe/geovisor/cds-igp/regenLinks.json"
         "https://api.npoint.io/9858da118b3cdc0fe6e9"
       );
       this.regions[0].items = data.LIMA;
@@ -186,21 +186,14 @@ export default {
 }
 
 .table-container {
-  width: 100%;
-  overflow-x: auto;
   margin-top: 20px;
 }
 .table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 2rem 0;
-  font-size: 16px;
+  width: 350px;
 }
 
 th,
 td {
-  padding: 0px 5px 5px 26px;
-  text-align: center;
   font-weight: 500;
 }
 
