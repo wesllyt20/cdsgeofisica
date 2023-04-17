@@ -14,7 +14,7 @@
         />
       </div>
       <div id="dividermenutop" class="border border-vertical" />
-      <h1 class="titulo">CDS - IGP</h1>
+      <h1 class="titulo">Comportamiendo dinámico de suelos - IGP</h1>
       <div class="opciones">
         <a id="acerca" class="my-linktop" @click="btnGeofi()">Acerca de</a>
         <div id="dividermenutopL" class="border border-vertical" />
@@ -154,6 +154,7 @@ export default {
     contGeofisico,
     contContacto,
     contListado,
+    
   },
   data() {
     return {
@@ -166,6 +167,7 @@ export default {
       anchoMenu: "450px",
       elementos: false,
       indexflecha: -1,
+      mostrarAlmacen: false
     };
   },
   methods: {
@@ -196,12 +198,11 @@ export default {
     },
     btnListado() {
       this.funcionFlechaFalse();
-      
+
       this.ocultarTodo();
       this.mostrarList = true;
       if (this.elementos === false) {
         this.positivo();
-        
       }
     },
     btnFuncion() {
@@ -213,7 +214,6 @@ export default {
         this.positivo();
       }
     },
-   
 
     ocultarTodo() {
       this.mostrarGeo = false;
@@ -237,17 +237,17 @@ export default {
     },
     positivo() {
       this.elementos = true;
-       this.movewidgets(465);
+           this.movewidgets(465);
     },
     negativo() {
       this.elementos = false;
-        this.movewidgets(-465);
+         this.movewidgets(-465);
     },
     funcionFlechaFalse() {
-      console.log("ESTE ES",this.drawer);
+      console.log("ESTE ES", this.drawer);
       if (this.drawer === false) {
-        console.log("AQUI SI EJECUTO ")
-      this.imageFlipped = !this.imageFlipped;
+        console.log("AQUI SI EJECUTO ");
+        this.imageFlipped = !this.imageFlipped;
         const iconFlecha = document.querySelector("#iconFlecha");
         iconFlecha.classList.toggle("rotate-180", this.imageFlipped);
       }
@@ -288,7 +288,7 @@ export default {
   watch: {
     drawer(val) {
       this.railVariantLeft = val ? 260 : 10;
-      console.log(val)
+      console.log(val);
     },
   },
 };
