@@ -63,7 +63,10 @@
     <div class="content-container">
       <div v-if="showAside" class="aside-container">
         <aside>
-          <p>TEST Aside</p>
+          <contFuncion v-show="mostrarFun"></contFuncion>
+          <contGeofisico v-show="mostrarGeo"></contGeofisico>
+          <contContacto v-show="mostrarCont"></contContacto>
+          <contListado v-show="mostrarList"></contListado>
         </aside>
       </div>
       <div class="iframe-container" :class="{ 'full-width': !showAside }">
@@ -72,7 +75,7 @@
           ref="iframe"
           v-show="loaded"
           src="'https://ide.igp.gob.pe/geovisor/estudios-cts"
-          style="width: 100%; height: 100%; border: 0"
+          style="border: 0"
           @load="iframeLoad"
         ></iframe>
         <div v-if="!loaded" class="loading-message">
@@ -81,24 +84,82 @@
       </div>
     </div>
 
-    <button v-if="loaded" class="ear-button" @click="showAside = !showAside">
-      <div class="ear"></div>
+    <button v-if="loaded" class="ear-button" @click="onMoveWidgetsButtonClick">
+      <img
+        id="iconFlecha"
+        class="rotate-image"
+        src="https://i.ibb.co/CJzYHCM/Vector-1.png"
+      />
     </button>
-    
   </div>
 </template>
   
 <script>
+import contFuncion from "./contFuncion.vue";
+import contGeofisico from "./contGeofisico.vue";
+import contContacto from "./contContacto.vue";
+import contListado from "./contListado.vue";
 export default {
+  name: "viewPrincipal2",
+  components: {
+    contFuncion,
+    contGeofisico,
+    contContacto,
+    contListado,
+  },
   data() {
     return {
       showAside: true,
       loaded: false,
+      mostrarGeo: true,
+      mostrarFun: false,
+      mostrarCont: false,
+      mostrarList: false,
     };
   },
   methods: {
     iframeLoad() {
       this.loaded = true;
+    },
+    btnGeofi() {
+      this.funcionFlechaFalse();
+      this.ocultarTodo();
+      this.mostrarGeo = true;
+    },
+    btnCont() {
+      this.funcionFlechaFalse();
+      this.ocultarTodo();
+      this.mostrarCont = true;
+    },
+    btnListado() {
+      this.funcionFlechaFalse();
+      this.ocultarTodo();
+      this.mostrarList = true;
+    },
+    btnFuncion() {
+      this.funcionFlechaFalse();
+      this.ocultarTodo();
+      this.mostrarFun = true;
+    },
+    ocultarTodo() {
+      this.mostrarGeo = false;
+      this.mostrarFun = false;
+      this.mostrarCont = false;
+      this.mostrarList = false;
+      this.showAside = true;
+    },
+    onMoveWidgetsButtonClick() {
+      this.showAside = !this.showAside;
+      this.imageFlipped = !this.imageFlipped;
+      const iconFlecha = document.querySelector("#iconFlecha");
+      iconFlecha.classList.toggle("rotate-180", this.imageFlipped);
+    },
+    funcionFlechaFalse() {
+      if (this.showAside === false) {
+        this.imageFlipped = !this.imageFlipped;
+        const iconFlecha = document.querySelector("#iconFlecha");
+        iconFlecha.classList.toggle("rotate-180", this.imageFlipped);
+      }
     },
   },
   mounted() {
@@ -158,10 +219,6 @@ body {
 .opciones {
   display: flex;
   margin-left: auto;
-}
-
-.opciones span {
-  padding: 0 8px;
 }
 
 .opciones span {
@@ -238,46 +295,34 @@ body {
 .rotate-image {
   transition: transform 0s; /* Agrega transición de transformación */
 }
+/****************/
+/****************/
+/****************/
 .main-container {
   height: 100%;
+  overflow: hidden;
 }
 
 .content-container {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: stretch;
-  align-content: stretch;
   height: 100%;
 }
-
 .aside-container {
-  width: 20%;
-  background-color: lightgray;
-  position: relative;
+  height: 100%;
+  max-width: 100%;
+  
 }
-
 aside {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 450px;
+  overflow-y: auto;
 }
 
 .iframe-container {
-  width: 80%;
+  width: 100%;
   height: 100%;
+  max-height: 90vh;
   position: relative;
   transition: width 0s ease-out;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
 }
 
 .full-width {
@@ -315,12 +360,10 @@ iframe {
   cursor: pointer;
   transition: background-color 0.2s ease-out;
 }
-.ear {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: white;
-  position: relative;
+
+#iconFlecha {
+  width: 19px;
+  height: 20px;
 }
 .ear::before {
   content: "";
