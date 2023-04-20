@@ -121,13 +121,15 @@
           activator="parent"
           location="end"
           v-model="showTooltip"
-          >¡Dale click aquí!</v-tooltip
+          content-class="tooltipClass"
+          >{{ tooltipText }}</v-tooltip
         >
       </v-btn>
     </div>
     <!-- contenedor de menu -->
     <v-navigation-drawer
       v-model="drawer"
+      :scrim="false"
       hide-overlay
       :style="{
         transition: 'transform 0.01s ease-in-out',
@@ -214,6 +216,7 @@ export default {
       isLoaded: false,
       showVButton: false,
       showTooltip: false,
+      tooltipText: "--",
     };
   },
 
@@ -223,13 +226,14 @@ export default {
     },
     iframeLoad() {
       setTimeout(() => {
-        this.positivo();
+          this.movewidgets(0);
         this.drawer = false;
         this.indexflecha = 1;
         this.isLoaded = true;
         this.showVButton = true;
         setTimeout(() => {
           this.showTooltip = true;
+          this.tooltipText = "¡Conoce más!";
         }, 1000);
       }, 4000);
     },
@@ -286,17 +290,19 @@ export default {
 
       if (this.elementos === true) {
         this.negativo();
+        this.tooltipText = "¡Abre aquí!";
       } else if (this.elementos === false) {
         this.positivo();
+        this.tooltipText = "¡Cierra aquí!";
       }
     },
     positivo() {
       this.elementos = true;
-      //   this.movewidgets(465);
+           this.movewidgets(465);
     },
     negativo() {
       this.elementos = false;
-      //   this.movewidgets(-465);
+         this.movewidgets(-465);
     },
     funcionFlechaFalse() {
       console.log("ESTE ES", this.drawer);
@@ -628,12 +634,5 @@ export default {
   .dropdown-menu {
     display: block;
   }
-}
-.v-tooltip__content {
-  font-size: 50px !important;
-  opacity: 1 !important;
-  display: block !important;
-  color: #000000 !important;
-  background-color: #ffffff !important;
 }
 </style>
