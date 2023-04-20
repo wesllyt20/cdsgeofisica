@@ -15,7 +15,6 @@
       </div>
       <div id="dividermenutop" class="border border-vertical" />
       <h1 class="titulo">Comportamiendo dinámico de suelos - IGP</h1>
-
       <div class="opciones">
         <a id="acerca" class="my-linktop" @click="btnGeofi()">Acerca de</a>
         <div id="dividermenutopL" class="border border-vertical" />
@@ -30,40 +29,6 @@
           :style="{ marginRight: '50px' }"
           >Contacto</a
         >
-      </div>
-
-      <button class="menu-btn" @click="toggleMenu">
-        <svg
-          fill="#65696c"
-          width="24px"
-          height="24px"
-          viewBox="0 0 32.00 32.00"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          stroke="#65696c"
-          style="margin-top: 10px"
-        >
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <path
-              d="M0.844 6.050c-0.256-0.256-0.381-0.581-0.381-0.975s0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.125 0.975 0.381s0.381 0.581 0.381 0.975-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381zM31.306 14.963c0.256 0.256 0.381 0.581 0.381 0.975s-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381s-0.381-0.581-0.381-0.975 0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.125 0.975 0.381zM31.306 25.819c0.256 0.256 0.381 0.581 0.381 0.975s-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381s-0.381-0.581-0.381-0.975 0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.131 0.975 0.381z"
-            ></path>
-          </g>
-        </svg>
-      </button>
-
-      <div v-if="showMenu" class="dropdown-menu">
-        <ul>
-          <li><a id="acerca" @click="btnGeofi()">Acerca de</a></li>
-          <li><a id="func" @click="btnFuncion()">Guía de uso</a></li>
-          <li><a id="listado" @click="btnListado()">Informes</a></li>
-          <li><a id="contacto" @click="btnCont()">Contacto</a></li>
-        </ul>
       </div>
     </div>
 
@@ -104,27 +69,19 @@
 
     <!-- START MENU -->
     <!-- boton -->
-    <div v-if="showVButton">
-      <v-btn
-        id="btnFlecha"
-        class="rail-variant ml-n9"
-        :class="{ 'rail-variant--open': drawer, 'bounce-right': isLoaded }"
-        icon
-        @click.stop="onMoveWidgetsButtonClick"
-      >
-        <v-img
-          id="iconFlecha"
-          class="rotate-image"
-          src="https://i.ibb.co/VSqBM9X/Vector-1.png"
-        ></v-img>
-        <v-tooltip
-          activator="parent"
-          location="end"
-          v-model="showTooltip"
-          >¡Dale click aquí!</v-tooltip
-        >
-      </v-btn>
-    </div>
+    <v-btn
+      id="btnFlecha"
+      class="rail-variant ml-n10"
+      :class="{ 'rail-variant--open': drawer }"
+      icon
+      @click.stop="onMoveWidgetsButtonClick"
+    >
+      <v-img
+        id="iconFlecha"
+        class="rotate-image"
+        src="https://i.ibb.co/CJzYHCM/Vector-1.png"
+      ></v-img>
+    </v-btn>
     <!-- contenedor de menu -->
     <v-navigation-drawer
       v-model="drawer"
@@ -198,6 +155,7 @@ export default {
     contGeofisico,
     contContacto,
     contListado,
+    
   },
   data() {
     return {
@@ -210,27 +168,15 @@ export default {
       anchoMenu: "450px",
       elementos: false,
       indexflecha: -1,
-      showMenu: false,
-      isLoaded: false,
-      showVButton: false,
-      showTooltip: false,
+      mostrarAlmacen: false
     };
   },
-
   methods: {
-    toggleMenu() {
-      this.showMenu = !this.showMenu;
-    },
     iframeLoad() {
       setTimeout(() => {
         this.positivo();
-        this.drawer = false;
+        this.drawer = true;
         this.indexflecha = 1;
-        this.isLoaded = true;
-        this.showVButton = true;
-        setTimeout(() => {
-          this.showTooltip = true;
-        }, 1000);
       }, 4000);
     },
     btnGeofi() {
@@ -292,11 +238,11 @@ export default {
     },
     positivo() {
       this.elementos = true;
-      //   this.movewidgets(465);
+           this.movewidgets(465);
     },
     negativo() {
       this.elementos = false;
-      //   this.movewidgets(-465);
+         this.movewidgets(-465);
     },
     funcionFlechaFalse() {
       console.log("ESTE ES", this.drawer);
@@ -356,49 +302,6 @@ export default {
 #contenedor {
   height: auto;
 }
-.bounce-right {
-  animation: bounce-right 0.8s linear both;
-}
-
-@keyframes bounce-right {
-  0% {
-    transform: translateX(48px);
-    animation-timing-function: ease-in;
-    opacity: 1;
-  }
-  24% {
-    opacity: 1;
-  }
-  40% {
-    transform: translateX(26px);
-    animation-timing-function: ease-in;
-  }
-  65% {
-    transform: translateX(13px);
-    animation-timing-function: ease-in;
-  }
-  82% {
-    transform: translateX(6.5px);
-    animation-timing-function: ease-in;
-  }
-  93% {
-    transform: translateX(4px);
-    animation-timing-function: ease-in;
-  }
-  25%,
-  55%,
-  75%,
-  87%,
-  98% {
-    transform: translateX(0);
-    animation-timing-function: ease-out;
-  }
-  100% {
-    transform: translateX(0);
-    animation-timing-function: ease-out;
-    opacity: 1;
-  }
-}
 /* CONTENEDOR  */
 .fill-height {
   height: 100vh;
@@ -420,15 +323,14 @@ export default {
 #btnFlecha {
   margin-top: 300px;
   position: absolute;
-  width: 55px;
-  height: 55px;
+  width: 60.3px;
+  height: 49.98px;
   z-index: v-bind(indexflecha);
-  border-radius: 0% 100% 100% 0%;
 }
 #iconFlecha {
   margin-left: 30px;
-  width: 20px;
-  height: 19px;
+  width: 19px;
+  height: 20px;
 }
 /* HEADER SUPERIOR */
 .barra-superior {
@@ -554,86 +456,6 @@ export default {
 }
 
 .rotate-image.rotate-180 {
-  transform: rotate(180deg);
-}
-.menu-btn {
-  display: none; /* ocultar el botón en pantallas grandes */
-  cursor: pointer;
-  margin-right: 10px;
-  padding: 0px 10px;
-  border-radius: 10px;
-  box-sizing: border-box;
-  cursor: pointer;
-  background: #ffffff;
-  border: 0.566325px solid rgba(25, 32, 36, 0.6);
-  border-radius: 3.39795px;
-}
-.menu-btn:active {
-  filter: brightness(75%);
-}
-.dropdown-menu {
-  position: absolute;
-  margin: 245px 0 0 0;
-  padding: 20px 0;
-  right: 0;
-  z-index: 2;
-
-  background: var(--dropdown-background);
-  border-radius: 6px;
-  list-style: none;
-
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  padding: 10px;
-  z-index: 199999;
-}
-.dropdown-menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.dropdown-menu li {
-  margin-bottom: 10px;
-}
-
-.dropdown-menu a {
-  color: #333;
-  text-decoration: none;
-  padding: 5px;
-  display: block;
-}
-
-.dropdown-menu a:hover {
-  background-color: #f7f7f7;
-}
-@media screen and (max-width: 1390px) {
-  .titulo {
-    display: none;
-    font-size: 24px;
-    content: "CDS-IGp";
-  }
-  .menu-btn {
-    display: block;
-  }
-
-  /* ocultar el menú principal en pantallas pequeñas */
-  .opciones,
-  #dividermenutop {
-    display: none;
-  }
-
-  /* mostrar el menú desplegable en pantallas pequeñas */
-  .dropdown-menu {
-    display: block;
-  }
-}
-.v-tooltip__content {
-  font-size: 50px !important;
-  opacity: 1 !important;
-  display: block !important;
-  color: #000000 !important;
-  background-color: #ffffff !important;
+  transform: rotate(180deg); /* Gira la imagen 180 grados */
 }
 </style>
