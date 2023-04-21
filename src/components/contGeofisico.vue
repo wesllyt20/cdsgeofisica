@@ -35,7 +35,6 @@
         id="btnFunci"
         class="my-linktop"
         @click="recepFunc"
-        style="color: #0000af"
         >Ver Guia de uso</a
       >
       <br />
@@ -109,11 +108,12 @@ export default {
   width: 141.98px;
   height: 24.73px;
   background: #ffffff;
-  border: 0.426437px solid rgba(0, 33, 79, 0.6);
+  border: 2px solid #0000af;
+  color:#0000af;
   border-radius: 4.26437px;
   cursor: pointer;
-  font-weight: 400;
-  font-size: 12px;
+  font-weight: 600;
+  font-size: 14px;
   line-height: 15px;
   display: flex;
   align-items: center;
@@ -121,6 +121,8 @@ export default {
   margin-left: 45px;
 }
 #btnFunci:hover{
-  background-color: #EDF7FF;
+  background-color: #0000af;
+  color:#ffffff;
+  
 }
 </style>

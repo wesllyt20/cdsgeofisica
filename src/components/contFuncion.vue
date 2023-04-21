@@ -1,95 +1,33 @@
 <template>
   <div>
     <h2 id="tiFunc">Guía de uso</h2>
-    <p class="parrafoFun">
-      Para poder visualizar la información de nuestro geo visor sigue los
-      siguientes pasos, empecemos! :
-    </p>
+    <p class="descrFunc">Funcionalidades de los iconos</p>
     <br />
-    <div
-      class="anuncio"
-      style="
-        background-color: #e6e6f7;
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        border: 1px solid #9c9cd2;
-      "
-    >
-      <div class="mb-10" style="flex: 0 0 auto">
-        <svg
-          width="18px"
-          height="18px"
-          viewBox="0 0 20.00 20.00"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          stroke="#0000AF"
-          stroke-width="0.0002"
-        >
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke="#CCCCCC"
-            stroke-width="0.36"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <path
-              fill="#0000AF"
-              fill-rule="evenodd"
-              d="M10 3a7 7 0 100 14 7 7 0 000-14zm-9 7a9 9 0 1118 0 9 9 0 01-18 0zm10.01 4a1 1 0 01-1 1H10a1 1 0 110-2h.01a1 1 0 011 1zM11 6a1 1 0 10-2 0v5a1 1 0 102 0V6z"
-            ></path>
-          </g>
-        </svg>
-      </div>
-      <p id="pAnuncio" style="margin-left: 11px; font-size: 16px">
-        <span style="color: #0000af">Importante:</span> Las zonas o localidades
-        sombreadas en el mapa cuentan con información disponible.
-      </p>
-    </div>
 
-    <div class="circulo">
-      <h3 class="cirNum">1</h3>
-    </div>
-    <p class="parrafoFun">
-      <span class="pasos"> Paso 1 : </span>
-      Ubica el icono de filtro
-      <span> 
-        <svg width="18px" height="18px" viewBox="-1.68 -1.68 27.36 27.36" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(1.1999999999999993,1.1999999999999993), scale(0.9)"><rect x="-1.68" y="-1.68" width="27.36" height="27.36" rx="0" fill="#e3e3e3" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20.17 3.91C20.1062 3.78712 20.0101 3.68399 19.8921 3.61173C19.774 3.53947 19.6384 3.50084 19.5 3.5H4.5C4.36157 3.50084 4.226 3.53947 4.10792 3.61173C3.98984 3.68399 3.89375 3.78712 3.83 3.91C3.76636 4.03323 3.73915 4.17204 3.75155 4.31018C3.76395 4.44832 3.81544 4.58007 3.9 4.69L9.25 12V19.75C9.25259 19.9481 9.33244 20.1374 9.47253 20.2775C9.61263 20.4176 9.80189 20.4974 10 20.5H14C14.1981 20.4974 14.3874 20.4176 14.5275 20.2775C14.6676 20.1374 14.7474 19.9481 14.75 19.75V12L20.1 4.69C20.1846 4.58007 20.236 4.44832 20.2484 4.31018C20.2608 4.17204 20.2336 4.03323 20.17 3.91Z" fill="#0000AF"></path> </g></svg>
-      </span>
-      , luego podremos seleccionar los departamentos y ciudades de las áreas con
-      estudio.
-    </p>
-
-    <div class="circulo">
-      <h3 class="cirNum">2</h3>
-    </div>
-    <p class="parrafoFun">
-      <span class="pasos"> Paso 2 : </span> Ubicar el icono de capas
-      <span>
+    <div class="contFuncion">
+      <div class="svgImg">
         <svg
-          width="18px"
-          height="18px"
-          viewBox="-4.08 -4.08 32.16 32.16"
+          width="40px"
+          height="40px"
+          viewBox="-1.92 -1.92 27.84 27.84"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           stroke="#000000"
-          stroke-width="0.048"
-          transform="rotate(0)"
+          stroke-width="0.00024000000000000003"
+          transform="matrix(1, 0, 0, 1, 0, 0)"
         >
           <g
             id="SVGRepo_bgCarrier"
             stroke-width="0"
-            transform="translate(0.35999999999999943,0.35999999999999943), scale(0.97)"
+            transform="translate(0,0), scale(1)"
           >
             <rect
-              x="-4.08"
-              y="-4.08"
-              width="32.16"
-              height="32.16"
-              rx="4.1808"
-              fill="#ebebeb"
+              x="-1.92"
+              y="-1.92"
+              width="27.84"
+              height="27.84"
+              rx="0"
+              fill="#ffffff"
               strokewidth="0"
             ></rect>
           </g>
@@ -97,8 +35,38 @@
             id="SVGRepo_tracerCarrier"
             stroke-linecap="round"
             stroke-linejoin="round"
-            stroke="#fcfcfc"
-            stroke-width="0.144"
+            stroke="#0000AFCCCCCC"
+            stroke-width="0.43200000000000005"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M20.17 3.91C20.1062 3.78712 20.0101 3.68399 19.8921 3.61173C19.774 3.53947 19.6384 3.50084 19.5 3.5H4.5C4.36157 3.50084 4.226 3.53947 4.10792 3.61173C3.98984 3.68399 3.89375 3.78712 3.83 3.91C3.76636 4.03323 3.73915 4.17204 3.75155 4.31018C3.76395 4.44832 3.81544 4.58007 3.9 4.69L9.25 12V19.75C9.25259 19.9481 9.33244 20.1374 9.47253 20.2775C9.61263 20.4176 9.80189 20.4974 10 20.5H14C14.1981 20.4974 14.3874 20.4176 14.5275 20.2775C14.6676 20.1374 14.7474 19.9481 14.75 19.75V12L20.1 4.69C20.1846 4.58007 20.236 4.44832 20.2484 4.31018C20.2608 4.17204 20.2336 4.03323 20.17 3.91Z"
+              fill="#0000AF"
+            ></path>
+          </g>
+        </svg>
+      </div>
+
+      <p class="parrafoFun">
+        <span class="pasos"> Filtro : </span>
+        Selecciona el departamento y ciudad según la lista.
+      </p>
+    </div>
+    <br />
+    <div class="contFuncion">
+      <div class="svgImg">
+        <svg
+          width="40px"
+          height="40px"
+          viewBox="-1.92 -1.92 27.84 27.84"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           ></g>
           <g id="SVGRepo_iconCarrier">
             <path
@@ -117,22 +85,20 @@
             ></path>
           </g>
         </svg>
-      </span>
-      , luego seleccionar el departamento y la ciudad para acceder a los tipos
-      de estudios.
-    </p>
+      </div>
 
-    <div class="circulo">
-      <h3 class="cirNum">3</h3>
+      <p class="parrafoFun">
+        <span class="pasos"> Capas : </span>
+        Selecciona el departamento y ciudad para acceder a la información
+        disponible.
+      </p>
     </div>
-
-    <p class="parrafoFun">
-      <span class="pasos"> Paso 3 : </span> Procedemos a activar el icono de
-      check
-      <span>
+    <br />
+    <div class="contFuncion">
+      <div class="svgImg">
         <svg
-          width="18px"
-          height="18px"
+          width="40px"
+          height="40px"
           viewBox="-3 -3 26.00 26.00"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -168,49 +134,32 @@
             ></path>
           </g>
         </svg>
-      </span>
-      sobre los estudios para visualizarlos en el mapa.
-    </p>
+      </div>
 
-    <div class="circulo">
-      <h3 class="cirNum">4</h3>
+      <p class="parrafoFun">
+        <span class="pasos"> Check : </span>
+        Utiliza esta función sobre el tipo de estudio para acceder a la
+        información.
+      </p>
     </div>
-
-    <p class="parrafoFun mb-3">
-      <span class="pasos"> Paso 4 : </span> Luego, ubicaremos el icono de
-      “Descripción y Leyenda”
-      <span>
+    <br />
+    <div class="contFuncion">
+      <div class="svgImg">
         <svg
-          width="18px"
-          height="18px"
-          viewBox="-6.4 -6.4 76.80 76.80"
+          width="40px"
+          height="40px"
+          viewBox="0 0 64.00 64.00"
           xmlns="http://www.w3.org/2000/svg"
-          stroke-width="3"
+          stroke-width="2.176"
           stroke="#0000AF"
           fill="none"
           transform="matrix(-1, 0, 0, 1, 0, 0)"
         >
-          <g
-            id="SVGRepo_bgCarrier"
-            stroke-width="0"
-            transform="translate(0,0), scale(1)"
-          >
-            <rect
-              x="-6.4"
-              y="-6.4"
-              width="76.80"
-              height="76.80"
-              rx="10.752"
-              fill="#ebebeb"
-              strokewidth="0"
-            ></rect>
-          </g>
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g
             id="SVGRepo_tracerCarrier"
             stroke-linecap="round"
             stroke-linejoin="round"
-            stroke="#CCCCCC"
-            stroke-width="2.432"
           ></g>
           <g id="SVGRepo_iconCarrier">
             <line x1="50.69" y1="32" x2="56.32" y2="32"></line>
@@ -224,22 +173,62 @@
             <circle cx="29" cy="48.03" r="6"></circle>
           </g>
         </svg>
-      </span>
-      para ver más información de la zonificación.
-    </p>
+      </div>
+
+      <p class="parrafoFun">
+        <span class="pasos">Leyenda : </span>
+        Utiliza esta función para visualizar mayor información.
+      </p>
+    </div>
+
+    <br />
+    <div
+      class="anuncio"
+      style="
+        background-color: #fdf8ee;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid #93620c;
+      "
+    >
+      <div class="mb-10" style="flex: 0 0 auto">
+        <svg
+          width="18px"
+          height="18px"
+          viewBox="0 0 20.00 20.00"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              fill="#ECAF42"
+              fill-rule="evenodd"
+              d="M10 3a7 7 0 100 14 7 7 0 000-14zm-9 7a9 9 0 1118 0 9 9 0 01-18 0zm10.01 4a1 1 0 01-1 1H10a1 1 0 110-2h.01a1 1 0 011 1zM11 6a1 1 0 10-2 0v5a1 1 0 102 0V6z"
+            ></path>
+          </g>
+        </svg>
+      </div>
+      <p id="pAnuncio" style="margin-left: 11px; font-size: 16px">
+        <span style="color: #93620c">Ten en cuenta:</span> Las localidades
+        sombreadas en el mapa cuentan con información disponible.
+      </p>
+    </div>
+
     <br />
 
     <a
       id="btnAcercade"
       class="my-linktop"
       @click="recepGeo"
-      style="color: #0000af"
       >Ver Acerca de</a
     >
-    <br />
-    <br />
-    <br />
-    <br />
     <br />
     <br />
   </div>
@@ -264,7 +253,7 @@ export default {
   color: #0a1fc2;
   margin: 45px 0px 12px 45px;
 }
-.parrafoFun {
+.descrFunc {
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
@@ -272,23 +261,37 @@ export default {
   color: #00132e;
   margin: 0px 15px 0px 45px;
 }
+.parrafoFun {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  color: #00132e;
+  margin: 0px 15px 0px 25px;
+}
 .pasos {
-  color: #0075ff;
+  color: #0000af;
   font-weight: 600;
 }
 .miniIcons {
   width: 20px;
   height: 20px;
 }
-.circulo {
-  color: #ffffff;
-  background: #0075ff;
-  border: 1px solid #999595;
-  width: 27px;
-  height: 27px;
-  border-radius: 50%;
-  margin: 20px 0px 5px 44px;
+.svgImg {
+  margin: 0px 0px 5px 44px;
+  border-radius: 3.57865px;
+  box-shadow: 3px 5px 5px 2px rgba(0, 0, 0, 0.5);
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
+.contFuncion {
+  display: flex;
+  align-items: start;
+}
+
 .cirNum {
   text-align: center;
   line-height: 26.33px;
@@ -305,11 +308,12 @@ export default {
   width: 141.98px;
   height: 24.73px;
   background: #ffffff;
-  border: 0.426437px solid rgba(0, 33, 79, 0.6);
+  border: 2px solid #0000af;
+  color:#0000af;
   border-radius: 4.26437px;
   cursor: pointer;
-  font-weight: 400;
-  font-size: 12px;
+  font-weight: 600;
+  font-size: 14px;
   line-height: 15px;
   display: flex;
   align-items: center;
@@ -317,6 +321,7 @@ export default {
   margin-left: 45px;
 }
 #btnAcercade:hover {
-  background-color: #edf7ff;
+  background-color: #0000af;
+  color:#ffffff;
 }
 </style>

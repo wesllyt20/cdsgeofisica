@@ -634,5 +634,8 @@ export default {
   .dropdown-menu {
     display: block;
   }
+  .barra-inferior{
+    display: block;
+  }
 }
 </style>
