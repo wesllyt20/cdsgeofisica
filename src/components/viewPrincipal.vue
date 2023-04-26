@@ -216,66 +216,178 @@ export default {
       this.showMenu = !this.showMenu;
     },
     iframeLoad() {
-      const iframe = document.getElementById("inlineFrameExample");
-      const btn = iframe.contentDocument.createElement("button");
-      btn.innerHTML = "Imprimir en consola";
-      btn.onclick = () => {
-        console.log("Cree un botón dentro del DOM");
-      };
-      btn.innerHTML = "Filtro";
-      btn.style.position = "absolute";
-      btn.style.left = "0";
-      btn.style.top = "17%";
-      btn.style.marginLeft = "5px";
-      btn.style.width = "40px";
-      btn.style.height = "40px";
-      btn.style.padding = "0x";
-      btn.style.transform = "translateY(-50%)";
-      btn.style.backgroundColor = "#ffffff";
-      btn.style.border = "none";
-      btn.style.borderRadius = "5px";
-      btn.style.cursor = "pointer";
-      btn.style.display = "flex";
-      btn.style.justifyContent  = "center";
-      btn.style.alignItems  = "center";
-      btn.innerHTML = '<img src="https://ide.igp.gob.pe/geovisor/cds-igp-test/filtroBtn.svg" alt=""  />';
-      btn.id = "btnFiltroDOM";
-      iframe.contentDocument.body.appendChild(btn);
-
-      // Creamos la ventana flotante
-      const popup = iframe.contentDocument.createElement("div");
-      popup.style.position = "absolute";
-      popup.style.width = "100px";
-      popup.style.height = "100px";
-      popup.style.top = "50%";
-      popup.style.left = "50%";
-      popup.style.transform = "translate(-50%, -50%)";
-      popup.style.backgroundColor = "#fff";
-      popup.style.border = "1px solid #000";
-      popup.style.boxShadow = "0px 0px 10px #000";
-      popup.style.padding = "10px";
-      popup.style.display = "none";
-      popup.id = "popupFiltro";
-      popup.innerHTML = "<h2 style='color: #0000AF'>Filtro</h2>";
-      iframe.contentDocument.body.appendChild(popup);
-
-      btn.addEventListener("click", () => {
-        if (popup.style.display === "none") {
-          popup.style.display = "block";
-        } else {
-          popup.style.display = "none";
-        }
-      });
-
       setTimeout(() => {
-        this.movewidgets(0);
+        // ---- BTN FILTRO
+
+        const iframe = document.getElementById("inlineFrameExample");
+        const btn = iframe.contentDocument.createElement("button");
+        btn.innerHTML = "Imprimir en consola";
+        btn.onclick = () => {
+          console.log("Cree un botón dentro del DOM");
+        };
+        btn.innerHTML = "Filtro";
+        btn.style.position = "absolute";
+        btn.style.left = "0";
+        const pixelAdd = "148px";
+        btn.style.top = pixelAdd;
+        btn.style.marginLeft = "6px";
+        btn.style.width = "40px";
+        btn.style.height = "40px";
+        btn.style.padding = "0x";
+        btn.style.transform = "translateY(-50%)";
+        btn.style.backgroundColor = "#ffffff";
+        btn.style.border = "none";
+        btn.style.borderRadius = "5px";
+        btn.style.cursor = "pointer";
+        btn.style.display = "flex";
+        btn.style.justifyContent = "center";
+        btn.style.alignItems = "center";
+        btn.innerHTML =
+          '<img src="https://ide.igp.gob.pe/geovisor/cds-igp-test/filtroBtn.svg" alt=""  />';
+        btn.id = "btnFiltroDOM";
+        btn.classList.add("active");
+        iframe.contentDocument.body.appendChild(btn);
+
+        // Creamos la ventana flotante
+        const popup = iframe.contentDocument.createElement("div");
+        popup.style.position = "fixed";
+        popup.style.width = "230px";
+        popup.style.height = "140px";
+        popup.style.top = "198px";
+        popup.style.left = "0";
+        popup.style.marginLeft = "47px";
+        popup.style.transform = "translateY(-50%)";
+        popup.style.backgroundColor = "#fff";
+        popup.style.border = "2px solid #0000AF";
+        popup.style.display = "none";
+        popup.id = "popupFiltro";
+        iframe.contentDocument.body.appendChild(popup);
+
+        // Agregamos el encabezado
+        const header = iframe.contentDocument.createElement("div");
+        header.style.backgroundColor = "#ffffff";
+        header.style.display = "flex";
+        header.style.justifyContent = "start";
+        header.style.alignItems = "center";
+        header.style.color = "#0000AF";
+        header.style.fontSize = "18px";
+        header.style.fontWeight = "600";
+        header.style.textAlign = "center";
+        header.style.padding="5px";
+        header.innerHTML = "Filtro";
+        popup.appendChild(header);
+
+        // Agregamos el contenido
+        const content = iframe.contentDocument.createElement("div");
+        content.style.backgroundColor = "#f5f5f5";
+        content.style.padding = "10px";
+        popup.appendChild(content);
+
+        // Agregamos el botón al contenido
+        const activateBtn = iframe.contentDocument.createElement("button");
+        activateBtn.innerHTML = "Activar";
+        activateBtn.style.display="flex";
+        activateBtn.style.padding="5px";
+        activateBtn.style.backgroundColor = "#0000AF";
+        activateBtn.style.color = "#fff";
+        activateBtn.style.border = "none";
+        activateBtn.style.borderRadius = "5px";
+        activateBtn.style.cursor = "pointer";
+        activateBtn.onclick = () => {
+
+
+
+          console.log("BOTON ACTIVATE ACCIONADO");
+
+
+
+
+
+
+
+
+        };
+        content.appendChild(activateBtn);
+        content.innerHTML="<br>"
+
+        // Agregamos el primer combobox
+        const select1 = iframe.contentDocument.createElement("select");
+        select1.id = "departamentos";
+        select1.style.width = "100%";
+        select1.style.padding = "5px";
+        select1.style.marginBottom = "10px";
+        content.appendChild(select1);
+
+        // Agregamos el segundo combobox
+        const select2 = iframe.contentDocument.createElement("select");
+        select2.id = "ciudades";
+        select2.style.width = "100%";
+        select2.style.padding = "5px";
+        content.appendChild(select2);
+
+        // Agregamos las opciones del primer combobox
+        async function get_departamentos() {
+          let url =
+            "https://ide.igp.gob.pe/arcgis/rest/services/CTS/Estudios_Zonificacion/MapServer/1/query?where=1%3D1&text=&objectIds=&time=&timeRelation=esriTimeRelationOverlaps&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=departamen&returnGeometry=false&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&havingClause=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=true&resultOffset=&resultRecordCount=&returnExtentOnly=false&sqlFormat=none&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=pjson";
+          let data = await fetch(url);
+          let datajson = await data.json();
+          let departamentos = datajson["features"].map(
+            (feature) => feature["attributes"]["departamen"]
+          );
+          departamentos.unshift("--Seleccionar--");
+          return departamentos;
+        }
+        get_departamentos().then((departamentos) => {
+          departamentos.forEach((departamento) => {
+            const option = iframe.contentDocument.createElement("option");
+            option.text = departamento;
+            option.value = departamento;
+            select1.appendChild(option);
+          });
+        });
+
+        // Agregamos las opciones del segundo combobox cuando cambia el valor del primer combobox
+        async function get_ciudades_de_departamento(departamento) {
+          let url = `https://ide.igp.gob.pe/arcgis/rest/services/CTS/Estudios_Zonificacion/MapServer/1/query?where=departamen%3D%27${departamento}%27&text=&objectIds=&time=&timeRelation=esriTimeRelationOverlaps&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=ciudad&returnGeometry=false&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&havingClause=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=true&resultOffset=&resultRecordCount=&returnExtentOnly=false&sqlFormat=none&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=pjson`;
+          let data = await fetch(url);
+          let datajson = await data.json();
+          let ciudades = datajson["features"].map(
+            (feature) => feature["attributes"]["ciudad"]
+          );
+          return ciudades;
+        }
+
+        select1.addEventListener("change", async () => {
+          const departamento = select1.value;
+          select2.innerHTML = "";
+          const ciudades = await get_ciudades_de_departamento(departamento);
+          ciudades.forEach((ciudad) => {
+            const option = iframe.contentDocument.createElement("option");
+            option.text = ciudad;
+            option.value = ciudad;
+            select2.appendChild(option);
+          });
+        });
+
+        btn.addEventListener("click", () => {
+          if (popup.style.display === "none") {
+            popup.style.display = "block";
+          } else {
+            popup.style.display = "none";
+          }
+        });
+
+        // FIN BTN FILTRO
+
         this.drawer = false;
         this.indexflecha = 1;
         this.isLoaded = true;
         this.showVButton = true;
+
         setTimeout(() => {
           this.showTooltip = true;
           this.tooltipText = "¡Conoce más!";
+          btn.click();
         }, 1000);
       }, 4000);
     },

@@ -6,45 +6,7 @@
 
     <div class="contFuncion">
       <div class="svgImg">
-        <svg
-          width="40px"
-          height="40px"
-          viewBox="-1.92 -1.92 27.84 27.84"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          stroke="#000000"
-          stroke-width="0.00024000000000000003"
-          transform="matrix(1, 0, 0, 1, 0, 0)"
-        >
-          <g
-            id="SVGRepo_bgCarrier"
-            stroke-width="0"
-            transform="translate(0,0), scale(1)"
-          >
-            <rect
-              x="-1.92"
-              y="-1.92"
-              width="27.84"
-              height="27.84"
-              rx="0"
-              fill="#ffffff"
-              strokewidth="0"
-            ></rect>
-          </g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke="#0000AFCCCCCC"
-            stroke-width="0.43200000000000005"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <path
-              d="M20.17 3.91C20.1062 3.78712 20.0101 3.68399 19.8921 3.61173C19.774 3.53947 19.6384 3.50084 19.5 3.5H4.5C4.36157 3.50084 4.226 3.53947 4.10792 3.61173C3.98984 3.68399 3.89375 3.78712 3.83 3.91C3.76636 4.03323 3.73915 4.17204 3.75155 4.31018C3.76395 4.44832 3.81544 4.58007 3.9 4.69L9.25 12V19.75C9.25259 19.9481 9.33244 20.1374 9.47253 20.2775C9.61263 20.4176 9.80189 20.4974 10 20.5H14C14.1981 20.4974 14.3874 20.4176 14.5275 20.2775C14.6676 20.1374 14.7474 19.9481 14.75 19.75V12L20.1 4.69C20.1846 4.58007 20.236 4.44832 20.2484 4.31018C20.2608 4.17204 20.2336 4.03323 20.17 3.91Z"
-              fill="#0000AF"
-            ></path>
-          </g>
-        </svg>
+        <svg fill="#0000AF" width="40px" height="40px" viewBox="-4.08 -4.08 32.16 32.16" xmlns="http://www.w3.org/2000/svg" id="filter" class="icon glyph" stroke="#0000AF"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M20.62,3.17A2,2,0,0,0,18.8,2H5.2A2,2,0,0,0,3.7,5.32L9,11.38V21a1,1,0,0,0,.47.85A1,1,0,0,0,10,22a1,1,0,0,0,.45-.11l4-2A1,1,0,0,0,15,19V11.38l5.3-6.06A2,2,0,0,0,20.62,3.17Z"></path></g></svg>
       </div>
 
       <p class="parrafoFun">
