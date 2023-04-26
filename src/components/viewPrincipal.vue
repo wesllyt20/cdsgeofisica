@@ -14,7 +14,7 @@
         />
       </div>
       <div id="dividermenutop" class="border border-vertical" />
-      <h1 class="titulo">Comportamiendo dinámico de suelos - IGP</h1>
+      <h1 class="titulo">Comportamiento dinámico de suelos - IGP</h1>
 
       <div class="opciones">
         <a id="acerca" class="my-linktop" @click="btnGeofi()">Acerca de</a>
@@ -128,6 +128,7 @@
     </div>
     <!-- contenedor de menu -->
     <v-navigation-drawer
+      class="vNavi"
       v-model="drawer"
       :scrim="false"
       hide-overlay
@@ -145,17 +146,7 @@
     <!-- END MENU -->
 
     <!-- START IFRAME -->
-    <div
-      id="contenedor"
-      style="
-        position: absolute;
-        top: 120px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: hidden;
-      "
-    >
+    <div id="contenedor" style="">
       <iframe
         id="inlineFrameExample"
         src="https://ide.igp.gob.pe/geovisor/estudios-cts"
@@ -185,11 +176,11 @@ const ids = [
   "widgets_ZoomSlider_Widget_72",
   "widgets_HomeButton_Widget_68",
   "dijit__WidgetBase_0",
-  "dijit__WidgetBase_1",
   "widgets_Scalebar_Widget_59",
   "widgets_Coordinate_Widget_61",
+  "btnFiltroDOM",
   "_62_panel",
-  "_63_panel",
+  "popupFiltro",
 ];
 
 export default {
@@ -225,8 +216,59 @@ export default {
       this.showMenu = !this.showMenu;
     },
     iframeLoad() {
+      const iframe = document.getElementById("inlineFrameExample");
+      const btn = iframe.contentDocument.createElement("button");
+      btn.innerHTML = "Imprimir en consola";
+      btn.onclick = () => {
+        console.log("Cree un botón dentro del DOM");
+      };
+      btn.innerHTML = "Filtro";
+      btn.style.position = "absolute";
+      btn.style.left = "0";
+      btn.style.top = "17%";
+      btn.style.marginLeft = "5px";
+      btn.style.width = "40px";
+      btn.style.height = "40px";
+      btn.style.padding = "0x";
+      btn.style.transform = "translateY(-50%)";
+      btn.style.backgroundColor = "#ffffff";
+      btn.style.border = "none";
+      btn.style.borderRadius = "5px";
+      btn.style.cursor = "pointer";
+      btn.style.display = "flex";
+      btn.style.justifyContent  = "center";
+      btn.style.alignItems  = "center";
+      btn.innerHTML = '<img src="https://ide.igp.gob.pe/geovisor/cds-igp-test/filtroBtn.svg" alt=""  />';
+      btn.id = "btnFiltroDOM";
+      iframe.contentDocument.body.appendChild(btn);
+
+      // Creamos la ventana flotante
+      const popup = iframe.contentDocument.createElement("div");
+      popup.style.position = "absolute";
+      popup.style.width = "100px";
+      popup.style.height = "100px";
+      popup.style.top = "50%";
+      popup.style.left = "50%";
+      popup.style.transform = "translate(-50%, -50%)";
+      popup.style.backgroundColor = "#fff";
+      popup.style.border = "1px solid #000";
+      popup.style.boxShadow = "0px 0px 10px #000";
+      popup.style.padding = "10px";
+      popup.style.display = "none";
+      popup.id = "popupFiltro";
+      popup.innerHTML = "<h2 style='color: #0000AF'>Filtro</h2>";
+      iframe.contentDocument.body.appendChild(popup);
+
+      btn.addEventListener("click", () => {
+        if (popup.style.display === "none") {
+          popup.style.display = "block";
+        } else {
+          popup.style.display = "none";
+        }
+      });
+
       setTimeout(() => {
-          this.movewidgets(0);
+        this.movewidgets(0);
         this.drawer = false;
         this.indexflecha = 1;
         this.isLoaded = true;
@@ -298,11 +340,11 @@ export default {
     },
     positivo() {
       this.elementos = true;
-           this.movewidgets(465);
+      this.movewidgets(465);
     },
     negativo() {
       this.elementos = false;
-         this.movewidgets(-465);
+      this.movewidgets(-465);
     },
     funcionFlechaFalse() {
       console.log("ESTE ES", this.drawer);
@@ -324,15 +366,7 @@ export default {
           widget = idocument.getElementById(id);
         }
         console.log("--->", widget);
-        var botonFiltro = iframe.contentWindow.document.getElementById(
-          "dijit__WidgetBase_1"
-        );
 
-        botonFiltro.click();
-        var botonLeyenda = iframe.contentWindow.document.getElementById(
-          "dijit__WidgetBase_0"
-        );
-        botonLeyenda.click();
         let left = 0;
         if (!widget.style.inset) {
           left = parseInt(widget.style.left.slice(0, 3));
@@ -361,6 +395,12 @@ export default {
 }
 #contenedor {
   height: auto;
+  position: absolute;
+  top: 120px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
 }
 .bounce-right {
   animation: bounce-right 0.8s linear both;
@@ -634,8 +674,14 @@ export default {
   .dropdown-menu {
     display: block;
   }
-  .barra-inferior{
-    display: block;
+  .barra-inferior {
+    display: none;
+  }
+  #contenedor {
+    top: 80px;
+  }
+  .vNavi {
+    margin-top: 80px !important;
   }
 }
 </style>

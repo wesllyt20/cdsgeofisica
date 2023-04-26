@@ -11,12 +11,14 @@
         <br />
         +51 13172300
       </p>
-      <ol id="tiLista" class="mt-3">
-        <a> Redes Sociales</a>
-        <ul class="ulLista mt-2">
+      <div class="tiLista mt-4 pb-2">
+        <label> Redes Sociales</label>
+      </div>
+      <ol class="subtiLista">
+        <ul class="ulLista">
           <svg
-            width="18px"
-            height="18px"
+            width="28px"
+            height="28px"
             viewBox="-3.36 -3.36 54.72 54.72"
             xmlns="http://www.w3.org/2000/svg"
             fill="#00214F"
@@ -43,13 +45,15 @@
               </g>
             </g>
           </svg>
-
-          <a href="https://www.facebook.com/igp.peru" target="_blank"> Facebook</a>
+          <a href="https://www.facebook.com/igp.peru" target="_blank">
+            Facebook</a
+          >
         </ul>
+
         <ul class="ulLista">
           <svg
-            width="18px"
-            height="18px"
+            width="28px"
+            height="28px"
             viewBox="-2.88 -2.88 37.76 37.76"
             id="Camada_1"
             version="1.1"
@@ -85,13 +89,16 @@
               </g>
             </g>
           </svg>
-          <a href="https://www.instagram.com/igp.peru/" target="_blank"> Instagram</a>
+          <a href="https://www.instagram.com/igp.peru/" target="_blank">
+            Instagram</a
+          >
         </ul>
+
         <ul class="ulLista">
           <svg
             fill="#00214F"
-            width="18px"
-            height="18px"
+            width="28px"
+            height="28px"
             viewBox="-2.88 -2.88 37.76 37.76"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +117,9 @@
               ></path>
             </g>
           </svg>
-          <a href="https://www.linkedin.com/company/igpperu/" target="_blank"> Linkedin</a>
+          <a href="https://www.linkedin.com/company/igpperu/" target="_blank">
+            Linkedin</a
+          >
         </ul>
         <ul class="ulLista">
           <svg
@@ -118,8 +127,8 @@
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            width="18px"
-            height="18px"
+            width="28px"
+            height="28px"
             viewBox="-194.56 -194.56 901.12 901.12"
             xml:space="preserve"
             stroke="#ffffff"
@@ -159,8 +168,8 @@
         <ul class="ulLista">
           <svg
             fill="#ffffff"
-            width="18px"
-            height="18px"
+            width="28px"
+            height="28px"
             viewBox="-3.2 -3.2 38.40 38.40"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
@@ -194,13 +203,15 @@
             </g>
           </svg>
 
-          <a href="https://www.youtube.com/igp_videos" target="_blank"> Youtube</a>
+          <a href="https://www.youtube.com/igp_videos" target="_blank">
+            Youtube</a
+          >
         </ul>
         <ul class="ulLista">
           <svg
             fill="#00214F"
-            height="18px"
-            width="18px"
+            height="28px"
+            width="28px"
             version="1.1"
             id="Icons"
             xmlns="http://www.w3.org/2000/svg"
@@ -221,7 +232,13 @@
               ></path>
             </g>
           </svg>
-          <a class="estiloA" href="https://www.flickr.com/people/156092703@N08/" target="_blank"> Flicker</a>
+          <a
+            class="estiloA"
+            href="https://www.flickr.com/people/156092703@N08/"
+            target="_blank"
+          >
+            Flicker</a
+          >
         </ul>
       </ol>
     </div>
@@ -232,7 +249,7 @@
 export default {};
 </script>
   
-  <style>
+  <style >
 .st0 {
   fill: #ffffff;
 }
@@ -283,15 +300,22 @@ export default {};
 ::-webkit-scrollbar-thumb:hover {
   background-color: #888;
 }
-#tiLista {
+.tiLista {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 18px;
+}
+.subtiLista {
+  column-count: 2;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   color: #00132e;
 }
-#tiLista a {
-  color: black;
+.subtiLista a {
+  color: #00214F;
   text-decoration: none;
   cursor: pointer;
 }
@@ -300,10 +324,9 @@ export default {};
   align-items: center;
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 150%;
   color: #00214f;
 }
-
 </style>
   
