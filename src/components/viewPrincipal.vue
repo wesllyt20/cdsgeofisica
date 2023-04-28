@@ -174,12 +174,12 @@ window.onload = function () {
 };
 const ids = [
   "widgets_ZoomSlider_Widget_72",
+  "_62_panel",
   "widgets_HomeButton_Widget_68",
   "dijit__WidgetBase_0",
   "widgets_Scalebar_Widget_59",
   "widgets_Coordinate_Widget_61",
   "btnFiltroDOM",
-  "_62_panel",
   "popupFiltro",
 ];
 
@@ -273,7 +273,7 @@ export default {
         header.style.fontSize = "18px";
         header.style.fontWeight = "600";
         header.style.textAlign = "center";
-        header.style.padding="5px";
+        header.style.padding = "5px";
         header.innerHTML = "Filtro";
         popup.appendChild(header);
 
@@ -281,34 +281,62 @@ export default {
         const content = iframe.contentDocument.createElement("div");
         content.style.backgroundColor = "#f5f5f5";
         content.style.padding = "10px";
+        content.style.display = "flex";
+        content.style.justifyContent = "end";
+        content.style.flexWrap = "wrap";
         popup.appendChild(content);
 
-        // Agregamos el botón al contenido
+        const buttonsContainer = iframe.contentDocument.createElement("div");
+        buttonsContainer.style.display = "flex";
+        content.appendChild(buttonsContainer);
+        // Agregamos el botón  ACTIVATE al contenido
         const activateBtn = iframe.contentDocument.createElement("button");
         activateBtn.innerHTML = "Activar";
-        activateBtn.style.display="flex";
-        activateBtn.style.padding="5px";
+        activateBtn.style.padding = "5px";
         activateBtn.style.backgroundColor = "#0000AF";
         activateBtn.style.color = "#fff";
         activateBtn.style.border = "none";
         activateBtn.style.borderRadius = "5px";
         activateBtn.style.cursor = "pointer";
         activateBtn.onclick = () => {
-
-
-
-          console.log("BOTON ACTIVATE ACCIONADO");
-
-
-
-
-
-
-
-
+          iframe.contentDocument
+            .querySelectorAll(".jimu-toggle-button:not(.checked)")
+            .forEach((f) => {
+              f.click();
+            });
+          console.log("BOTON ACTIVATE ACCIONADO -> ");
         };
         content.appendChild(activateBtn);
-        content.innerHTML="<br>"
+
+        // Agregamos el botón RESET al contenido
+
+        const resetBtn = iframe.contentDocument.createElement("button");
+
+        resetBtn.innerHTML = "Reset";
+        resetBtn.style.padding = "5px";
+        resetBtn.style.backgroundColor = "#0000AF";
+        resetBtn.style.color = "#fff";
+        resetBtn.style.border = "none";
+        resetBtn.style.borderRadius = "5px";
+        resetBtn.style.cursor = "pointer";
+        resetBtn.style.marginLeft = "10px";
+        resetBtn.onclick = () => {
+          iframe.contentDocument
+            .querySelectorAll(".jimu-toggle-button.checked")
+            .forEach((f) => {
+              f.click();
+            });
+
+          console.log("BOTON RESET ACTIVADO ");
+        };
+        content.appendChild(resetBtn);
+
+        const cboContainer = iframe.contentDocument.createElement("div");
+        cboContainer.style.display = "flex";
+        cboContainer.style.flexDirection = "column";
+        cboContainer.style.width = "100%";
+        cboContainer.style.padding = "10px 0px 0px 0px";
+        content.appendChild(cboContainer);
 
         // Agregamos el primer combobox
         const select1 = iframe.contentDocument.createElement("select");
@@ -337,6 +365,7 @@ export default {
           departamentos.unshift("--Seleccionar--");
           return departamentos;
         }
+
         get_departamentos().then((departamentos) => {
           departamentos.forEach((departamento) => {
             const option = iframe.contentDocument.createElement("option");
@@ -354,12 +383,41 @@ export default {
           let ciudades = datajson["features"].map(
             (feature) => feature["attributes"]["ciudad"]
           );
+          ciudades.unshift("--Seleccionar--");
           return ciudades;
         }
+
+        const selectDepartamentos =
+          iframe.contentDocument.getElementById("departamentos");
+        function set_lugar(lugar) {
+          let f = iframe.contentDocument.querySelectorAll(
+            `[id^=jimu_dijit_Popup_] [data-dojo-attach-point=listContent] .checkInput[data='${lugar}']`
+          );
+          f.forEach((h) => {
+            h.click();
+          });
+        }
+        selectDepartamentos.addEventListener("change", () => {
+          const DepaSeleccionado = selectDepartamentos.value;
+          console.log(`Esta opción fue seleccionada: ${DepaSeleccionado}`);
+
+          set_lugar(DepaSeleccionado);
+        });
+
+        const selectCiudades =
+          iframe.contentDocument.getElementById("ciudades");
+
+        selectCiudades.addEventListener("change", () => {
+          const valorSeleccionado = selectCiudades.value;
+          console.log(`Esta opción fue seleccionada: ${valorSeleccionado}`);
+
+          set_lugar(valorSeleccionado);
+        });
 
         select1.addEventListener("change", async () => {
           const departamento = select1.value;
           select2.innerHTML = "";
+
           const ciudades = await get_ciudades_de_departamento(departamento);
           ciudades.forEach((ciudad) => {
             const option = iframe.contentDocument.createElement("option");
@@ -388,6 +446,10 @@ export default {
           this.showTooltip = true;
           this.tooltipText = "¡Conoce más!";
           btn.click();
+          var botonLeyenda = iframe.contentWindow.document.getElementById(
+            "dijit__WidgetBase_0"
+          );
+          botonLeyenda.click();
         }, 1000);
       }, 4000);
     },
@@ -766,23 +828,21 @@ export default {
 .dropdown-menu a:hover {
   background-color: #f7f7f7;
 }
-@media screen and (max-width: 1390px) {
+@media screen and (max-width: 1335px) {
+  .barra-superior {
+    flex-wrap: wrap;
+  }
   .titulo {
-    display: none;
-    font-size: 24px;
-    content: "CDS-IGp";
+    margin-right: auto;
   }
   .menu-btn {
     display: block;
   }
 
-  /* ocultar el menú principal en pantallas pequeñas */
-  .opciones,
-  #dividermenutop {
+  .opciones {
     display: none;
   }
 
-  /* mostrar el menú desplegable en pantallas pequeñas */
   .dropdown-menu {
     display: block;
   }
@@ -794,6 +854,12 @@ export default {
   }
   .vNavi {
     margin-top: 80px !important;
+  }
+}
+@media screen and (max-width: 970px) {
+  .titulo,
+  #dividermenutop {
+    display: none;
   }
 }
 </style>
