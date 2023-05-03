@@ -7,5 +7,5 @@ module.exports = defineConfig({
 			// https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vuetify-loader
 		}
   },
-  publicPath: '/geovisor/cds-igp-test/'
+  publicPath: '/geovisor/cds-igp/'
 })

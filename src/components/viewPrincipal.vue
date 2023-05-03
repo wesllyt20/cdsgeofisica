@@ -179,8 +179,11 @@ const ids = [
   "dijit__WidgetBase_0",
   "widgets_Scalebar_Widget_59",
   "widgets_Coordinate_Widget_61",
+  //ELEMENTOS CREADOS AQUI
   "btnFiltroDOM",
   "popupFiltro",
+  "btnLeyendaDOM",
+  "popupLeyenda",
 ];
 
 export default {
@@ -221,10 +224,7 @@ export default {
 
         const iframe = document.getElementById("inlineFrameExample");
         const btn = iframe.contentDocument.createElement("button");
-        btn.innerHTML = "Imprimir en consola";
-        btn.onclick = () => {
-          console.log("Cree un botón dentro del DOM");
-        };
+        btn.onclick = () => {};
         btn.innerHTML = "Filtro";
         btn.style.position = "absolute";
         btn.style.left = "0";
@@ -252,8 +252,8 @@ export default {
         const popup = iframe.contentDocument.createElement("div");
         popup.style.position = "fixed";
         popup.style.width = "230px";
-        popup.style.height = "140px";
-        popup.style.top = "198px";
+        popup.style.height = "160px";
+        popup.style.top = "210px";
         popup.style.left = "0";
         popup.style.marginLeft = "47px";
         popup.style.transform = "translateY(-50%)";
@@ -270,7 +270,7 @@ export default {
         header.style.justifyContent = "start";
         header.style.alignItems = "center";
         header.style.color = "#0000AF";
-        header.style.fontSize = "18px";
+        header.style.fontSize = "16px";
         header.style.fontWeight = "600";
         header.style.textAlign = "center";
         header.style.padding = "5px";
@@ -304,7 +304,6 @@ export default {
             .forEach((f) => {
               f.click();
             });
-          console.log("BOTON ACTIVATE ACCIONADO -> ");
         };
         content.appendChild(activateBtn);
 
@@ -326,8 +325,6 @@ export default {
             .forEach((f) => {
               f.click();
             });
-
-          console.log("BOTON RESET ACTIVADO ");
         };
         content.appendChild(resetBtn);
 
@@ -389,9 +386,12 @@ export default {
 
         const selectDepartamentos =
           iframe.contentDocument.getElementById("departamentos");
+
         function set_lugar(lugar) {
           let f = iframe.contentDocument.querySelectorAll(
-            `[id^=jimu_dijit_Popup_] [data-dojo-attach-point=listContent] .checkInput[data='${lugar}']`
+            `[id^=jimu_dijit_Popup_] [data-dojo-attach-point=listContent] .checkInput[data="${encodeURIComponent(
+              lugar
+            )}"]`
           );
           f.forEach((h) => {
             h.click();
@@ -399,7 +399,6 @@ export default {
         }
         selectDepartamentos.addEventListener("change", () => {
           const DepaSeleccionado = selectDepartamentos.value;
-          console.log(`Esta opción fue seleccionada: ${DepaSeleccionado}`);
 
           set_lugar(DepaSeleccionado);
         });
@@ -409,7 +408,6 @@ export default {
 
         selectCiudades.addEventListener("change", () => {
           const valorSeleccionado = selectCiudades.value;
-          console.log(`Esta opción fue seleccionada: ${valorSeleccionado}`);
 
           set_lugar(valorSeleccionado);
         });
@@ -437,25 +435,168 @@ export default {
 
         // FIN BTN FILTRO
 
+        // INICIO BTN LEYENDA --------------------------------------------
+
+        const btnLeyenda = iframe.contentDocument.createElement("button");
+        btnLeyenda.onclick = () => {};
+        btnLeyenda.innerHTML = "Leyenda";
+        btnLeyenda.style.position = "fixed";
+        btnLeyenda.style.left = "0";
+        btnLeyenda.style.bottom = "50px";
+        btnLeyenda.style.marginLeft = "6px";
+        btnLeyenda.style.width = "40px";
+        btnLeyenda.style.height = "40px";
+        btnLeyenda.style.padding = "0x";
+        btnLeyenda.style.transform = "translateY(-50%)";
+        btnLeyenda.style.backgroundColor = "#ffffff";
+        btnLeyenda.style.border = "none";
+        btnLeyenda.style.borderRadius = "5px";
+        btnLeyenda.style.cursor = "pointer";
+        btnLeyenda.style.display = "flex";
+        btnLeyenda.style.justifyContent = "center";
+        btnLeyenda.style.alignItems = "center";
+        btnLeyenda.innerHTML =
+          '<img src="https://ide.igp.gob.pe/geovisor/cds-igp-test/FiltroIcon.svg" alt=""  />';
+        btnLeyenda.id = "btnLeyendaDOM";
+        btnLeyenda.classList.add("active");
+        iframe.contentDocument.body.appendChild(btnLeyenda);
+
+        // Creamos la ventana flotante
+        const popupLeyenda = iframe.contentDocument.createElement("div");
+        popupLeyenda.style.position = "fixed";
+        popupLeyenda.style.width = "300px";
+        popupLeyenda.style.height = "300px";
+
+        popupLeyenda.style.marginLeft = "47px";
+        popupLeyenda.style.backgroundColor = "#fff";
+        popupLeyenda.style.border = "2px solid #0000AF";
+        popupLeyenda.style.display = "block";
+        // Agregamos las propiedades de redimensionamiento
+        popupLeyenda.style.resize = "vertical";
+        popupLeyenda.style.left = "3px";
+        popupLeyenda.style.overflow = "auto";
+        popupLeyenda.style.bottom = "108px";
+        popupLeyenda.id = "popupLeyenda";
+        iframe.contentDocument.body.appendChild(popupLeyenda);
+
+        //funcion de activar y desactivar btn Leyenda
+        btnLeyenda.addEventListener("click", () => {
+          if (popupLeyenda.style.display === "none") {
+            popupLeyenda.style.display = "block";
+          } else {
+            popupLeyenda.style.display = "none";
+          }
+        });
+
+        // Agregamos el encabezado
+        const headerLeyenda = iframe.contentDocument.createElement("div");
+        headerLeyenda.style.backgroundColor = "#ffffff";
+        headerLeyenda.style.display = "flex";
+        headerLeyenda.style.justifyContent = "start";
+        headerLeyenda.style.alignItems = "center";
+        headerLeyenda.style.color = "#0000AF";
+        headerLeyenda.style.fontSize = "16px";
+        headerLeyenda.style.fontWeight = "600";
+        headerLeyenda.style.textAlign = "center";
+        headerLeyenda.style.padding = "5px";
+        //headerLeyenda.style.cursor = "move";
+        //headerLeyenda.setAttribute("draggable", "true");
+        headerLeyenda.innerHTML = "Leyenda";
+        popupLeyenda.appendChild(headerLeyenda);
+
+        // Agregamos el contenido
+        const contentLeyenda = iframe.contentDocument.createElement("div");
+        contentLeyenda.style.backgroundColor = "#f5f5f5";
+        contentLeyenda.style.padding = "10px";
+        contentLeyenda.style.display = "flex";
+        contentLeyenda.style.justifyContent = "start";
+        contentLeyenda.style.flexWrap = "wrap";
+        popupLeyenda.appendChild(contentLeyenda);
+
+        // Creamos el contenedor y lo configuramos para que tenga una dirección de columna y un ancho máximo
+        const ContainerLeyenda = iframe.contentDocument.createElement("div");
+        ContainerLeyenda.style.display = "flex";
+        ContainerLeyenda.style.flexDirection = "column";
+        ContainerLeyenda.style.maxWidth = "200px"; // ajusta el ancho máximo según tus necesidades
+        contentLeyenda.appendChild(ContainerLeyenda);
+
+        /* // Agregamos el título "Departamento" en negrita como hijo del contenedor
+        const title = iframe.contentDocument.createElement("div");
+        title.style.fontWeight = "bold";
+        title.style.fontSize = "14px";
+        title.style.marginTop = "12px";
+        title.style.marginLeft = "8px";
+        title.textContent = "Departamento";
+        ContainerLeyenda.appendChild(title);
+
+        // Agregamos la lista de elementos como hijo del contenedor
+        const list = iframe.contentDocument.createElement("ul");
+        list.style.listStyle = "none";
+        list.style.margin = "0";
+        list.style.padding = "0";
+        list.style.marginTop = "10px";
+        ContainerLeyenda.appendChild(list);
+
+        // Agregamos los elementos de la lista como hijos de la lista
+
+        const addListItem = (text, color) => {
+          const item = iframe.contentDocument.createElement("li");
+          item.style.display = "flex";
+          item.style.alignItems = "center";
+          item.style.fontSize = "12px";
+          item.style.marginTop = "0px";
+          item.style.lineHeight = "1.4";
+          list.appendChild(item);
+
+          const circle = iframe.contentDocument.createElement("div");
+          circle.style.width = "8px";
+          circle.style.height = "8px";
+          circle.style.borderRadius = "50%";
+          circle.style.marginLeft = "20px";
+          circle.style.backgroundColor = color;
+          circle.style.border = "0.5px solid black";
+          item.appendChild(circle);
+
+          const textEl = iframe.contentDocument.createElement("span");
+          textEl.textContent = text;
+          textEl.style.marginLeft = "15px";
+          item.appendChild(textEl);
+        };
+        addListItem("ANCASH", "#a900e6");
+        addListItem("AREQUIPA", "#55ff00");
+        addListItem("ICA", "#38a800");
+        addListItem("LIMA", "#ffff00");
+        addListItem("MOQUEGUA", "#00c5ff");
+        addListItem("PIURA", "#ff5500");
+        addListItem("TACNA", "#0000ff"); */
+        // Funciones de llenado de leyenda
+
+        const switchContainer = iframe.contentDocument.createElement("div");
+        switchContainer.setAttribute("id", "switchConteiner");
+        ContainerLeyenda.appendChild(switchContainer);
+
+        /* ESTO ES PARA INYECTAR EL JS Y JALARLO
+        const script = iframe.contentDocument.createElement("script");
+        script.src =
+          "https://ide.igp.gob.pe/geovisor/cds-igp-test/leyendaObserver.js";
+        iframe.contentDocument.body.appendChild(script); */
+
+        // FIN BTN LEYENDA
+
         this.drawer = false;
         this.indexflecha = 1;
         this.isLoaded = true;
         this.showVButton = true;
-
+        btn.click();
         setTimeout(() => {
           this.showTooltip = true;
           this.tooltipText = "¡Conoce más!";
-          btn.click();
-          var botonLeyenda = iframe.contentWindow.document.getElementById(
-            "dijit__WidgetBase_0"
-          );
-          botonLeyenda.click();
         }, 1000);
-      }, 4000);
+      }, 3000);
     },
     btnGeofi() {
       this.funcionFlechaFalse();
-
+      
       this.ocultarTodo();
       this.mostrarGeo = true;
       if (this.elementos === false) {
@@ -521,9 +662,7 @@ export default {
       this.movewidgets(-465);
     },
     funcionFlechaFalse() {
-      console.log("ESTE ES", this.drawer);
       if (this.drawer === false) {
-        console.log("AQUI SI EJECUTO ");
         this.imageFlipped = !this.imageFlipped;
         const iconFlecha = document.querySelector("#iconFlecha");
         iconFlecha.classList.toggle("rotate-180", this.imageFlipped);
@@ -539,7 +678,6 @@ export default {
         while (!widget) {
           widget = idocument.getElementById(id);
         }
-        console.log("--->", widget);
 
         let left = 0;
         if (!widget.style.inset) {
@@ -557,7 +695,6 @@ export default {
   watch: {
     drawer(val) {
       this.railVariantLeft = val ? 260 : 10;
-      console.log(val);
     },
   },
 };
@@ -752,7 +889,7 @@ export default {
 }
 
 .my-link:hover {
-  color: #0032ff;
+  color: #0032ff !important;
   font-weight: 600;
 }
 
