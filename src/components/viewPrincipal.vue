@@ -17,17 +17,36 @@
       <h1 class="titulo">Comportamiento dinámico de suelos - IGP</h1>
 
       <div class="opciones">
-        <a id="acerca" class="my-linktop" @click="btnGeofi()">Acerca de</a>
+        <a
+          id="acerca"
+          class="my-linktop"
+          @click="btnGeofi()"
+          :class="{ 'my-linktop': true, active: mostrarGeo }"
+          >Acerca de</a
+        >
         <div id="dividermenutopL" class="border border-vertical" />
-        <a id="func" class="my-linktop" @click="btnFuncion()">Guía de uso</a>
+        <a
+          id="func"
+          class="my-linktop"
+          @click="btnFuncion()"
+          :class="{ 'my-linktop': true, active: mostrarFun }"
+          >Guía de uso</a
+        >
         <div id="dividermenutopL" class="border border-vertical" />
-        <a id="listado" class="my-linktop" @click="btnListado()">Informes</a>
+        <a
+          id="listado"
+          class="my-linktop"
+          @click="btnListado()"
+          :class="{ 'my-linktop': true, active: mostrarList }"
+          >Informes</a
+        >
         <div id="dividermenutopL" class="border border-vertical" />
         <a
           id="contacto"
           class="my-linktop"
           @click="btnCont()"
           :style="{ marginRight: '50px' }"
+          :class="{ 'my-linktop': true, active: mostrarCont }"
           >Contacto</a
         >
       </div>
@@ -59,10 +78,50 @@
 
       <div v-if="showMenu" class="dropdown-menu">
         <ul>
-          <li><a id="acerca" @click="btnGeofi()">Acerca de</a></li>
-          <li><a id="func" @click="btnFuncion()">Guía de uso</a></li>
-          <li><a id="listado" @click="btnListado()">Informes</a></li>
-          <li><a id="contacto" @click="btnCont()">Contacto</a></li>
+          <li>
+            <a
+              id="acerca"
+              @click="
+                btnGeofi();
+                closeMenu();
+              "
+              :class="{ 'my-linktop': true, active: mostrarGeo }"
+              >Acerca de</a
+            >
+          </li>
+          <li>
+            <a
+              id="func"
+              @click="
+                btnFuncion();
+                closeMenu();
+              "
+              :class="{ 'my-linktop': true, active: mostrarFun }"
+              >Guía de uso</a
+            >
+          </li>
+          <li>
+            <a
+              id="listado"
+              @click="
+                btnListado();
+                closeMenu();
+              "
+              :class="{ 'my-linktop': true, active: mostrarList }"
+              >Informes</a
+            >
+          </li>
+          <li>
+            <a
+              id="contacto"
+              @click="
+                btnCont();
+                closeMenu();
+              "
+              :class="{ 'my-linktop': true, active: mostrarCont }"
+              >Contacto</a
+            >
+          </li>
         </ul>
       </div>
     </div>
@@ -75,8 +134,34 @@
         href="https://www.gob.pe/igp"
         target="_blank"
         :style="{ marginLeft: '48px' }"
-        >Portal IGP</a
       >
+        <span class="link-text">
+          <svg
+            class="mi-svg"
+            width="18px"
+            height="18px"
+            viewBox="0 0 24.00 24.00"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#211d18"
+            style="vertical-align: middle"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <rect x="0" fill="none" width="24" height="24"></rect>
+              <g>
+                <path
+                  d="M22 9L12 1 2 9v2h2v10h5v-4c0-1.657 1.343-3 3-3s3 1.343 3 3v4h5V11h2V9z"
+                ></path>
+              </g>
+            </g>
+          </svg>Portal IGP
+        </span>
+      </a>
       <div id="dividermenubot" class="border border-vertical" />
       <a
         class="my-link"
@@ -92,11 +177,8 @@
         >Visor Geográfico</a
       >
       <div id="dividermenubot" class="border border-vertical" />
-      <a
-        class="my-link"
-        href="https://ide.igp.gob.pe/geovisor/estudios-cts/"
-        target="_blank"
-        >CDS - IGP</a
+      <span class="my-link" target="_blank" style="color: #0000af; text-decoration: none"
+        >Comportamiento dinámico de suelos</span
       >
     </div>
     <!-- final inferior -->
@@ -104,7 +186,7 @@
 
     <!-- START MENU -->
     <!-- boton -->
-    <div v-if="showVButton">
+    <div v-if="showVButton" class="tooltip">
       <v-btn
         id="btnFlecha"
         class="rail-variant ml-n9"
@@ -115,15 +197,11 @@
         <v-img
           id="iconFlecha"
           class="rotate-image"
-          src="https://i.ibb.co/VSqBM9X/Vector-1.png"
+          :class="{ 'rotate-180': !drawer }"
+          src="https://i.ibb.co/CJzYHCM/Vector-1.png"
         ></v-img>
-        <v-tooltip
-          activator="parent"
-          location="end"
-          v-model="showTooltip"
-          content-class="tooltipClass"
-          >{{ tooltipText }}</v-tooltip
-        >
+        <!--https://i.ibb.co/CJzYHCM/Vector-1.png →→→→ -->
+        <span class="tooltiptext">{{ tooltipText }}</span>
       </v-btn>
     </div>
     <!-- contenedor de menu -->
@@ -135,9 +213,48 @@
       :style="{
         transition: 'transform 0.01s ease-in-out',
         width: anchoMenu,
-        marginTop: '120px',
+        marginTop: marginTopNav,
       }"
     >
+      <div
+        class="cerrarAside"
+        style="
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin: 5px 15px;
+          cursor: pointer;
+        "
+        @click="drawer = false"
+      >
+        <a
+          style="
+            color: #20aaff;
+            font-weight: bold;
+            font-size: 15px;
+            position: relative;
+          "
+        >
+          <span
+            style="
+              position: absolute;
+              top: 6px;
+              right: 6px;
+              width: 20px;
+              height: 20px;
+              background-color: white;
+              border-radius: 50%;
+              border: 1px solid #0000;
+              box-shadow: -0.839103px 1.67821px 3.35641px rgba(0, 0, 0, 0.6);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <span style="position: relative">x</span>
+          </span>
+        </a>
+      </div>
       <contFuncion v-show="mostrarFun"></contFuncion>
       <contGeofisico v-show="mostrarGeo"></contGeofisico>
       <contContacto v-show="mostrarCont"></contContacto>
@@ -174,9 +291,7 @@ window.onload = function () {
 };
 const ids = [
   "widgets_ZoomSlider_Widget_72",
-  "_62_panel",
   "widgets_HomeButton_Widget_68",
-  "dijit__WidgetBase_0",
   "widgets_Scalebar_Widget_59",
   "widgets_Coordinate_Widget_61",
   //ELEMENTOS CREADOS AQUI
@@ -199,29 +314,56 @@ export default {
     return {
       railVariantLeft: 10,
       drawer: false,
-      mostrarGeo: true,
+      mostrarGeo: false,
       mostrarFun: false,
       mostrarCont: false,
       mostrarList: false,
       anchoMenu: "450px",
+      marginTopNav: null,
       elementos: false,
       indexflecha: -1,
       showMenu: false,
       isLoaded: false,
+
       showVButton: false,
-      showTooltip: false,
-      tooltipText: "--",
+      tooltipText: "¡Cierra aquí!",
+      accionTooltip: "visible",
+      widTooltip: "150px",
     };
   },
-
+  mounted() {
+    window.addEventListener("resize", this.ajustarMargenTop);
+    if (window.innerWidth <= 1335) {
+      this.marginTopNav = "80px";
+    } else {
+      this.marginTopNav = "120px";
+    }
+  },
+  beforeUnmount() {
+    window.removeEventListener("resize", this.ajustarMargenTop);
+  },
   methods: {
     toggleMenu() {
       this.showMenu = !this.showMenu;
     },
+    closeMenu() {
+      this.showMenu = false;
+    },
+    ajustarMargenTop() {
+      if (window.innerWidth <= 1335) {
+        this.marginTopNav = "80px";
+      } else {
+        this.marginTopNav = "120px";
+      }
+    },
+    /* llenadoPopLeyenda(){
+      const iframe = document.getElementById("inlineFrameExample");
+      
+
+    }, */
     iframeLoad() {
       setTimeout(() => {
         // ---- BTN FILTRO
-
         const iframe = document.getElementById("inlineFrameExample");
         const btn = iframe.contentDocument.createElement("button");
         btn.onclick = () => {};
@@ -243,7 +385,7 @@ export default {
         btn.style.justifyContent = "center";
         btn.style.alignItems = "center";
         btn.innerHTML =
-          '<img src="https://ide.igp.gob.pe/geovisor/cds-igp-test/filtroBtn.svg" alt=""  />';
+          '<img src="https://ide.igp.gob.pe/geovisor/cds/filtroBtn.svg" alt=""  />';
         btn.id = "btnFiltroDOM";
         btn.classList.add("active");
         iframe.contentDocument.body.appendChild(btn);
@@ -265,11 +407,11 @@ export default {
 
         // Agregamos el encabezado
         const header = iframe.contentDocument.createElement("div");
-        header.style.backgroundColor = "#ffffff";
+        header.style.backgroundColor = "#0000AF";
         header.style.display = "flex";
         header.style.justifyContent = "start";
         header.style.alignItems = "center";
-        header.style.color = "#0000AF";
+        header.style.color = "#FFFFFF";
         header.style.fontSize = "16px";
         header.style.fontWeight = "600";
         header.style.textAlign = "center";
@@ -279,7 +421,7 @@ export default {
 
         // Agregamos el contenido
         const content = iframe.contentDocument.createElement("div");
-        content.style.backgroundColor = "#f5f5f5";
+        content.style.backgroundColor = "#ffffff";
         content.style.padding = "10px";
         content.style.display = "flex";
         content.style.justifyContent = "end";
@@ -456,26 +598,27 @@ export default {
         btnLeyenda.style.justifyContent = "center";
         btnLeyenda.style.alignItems = "center";
         btnLeyenda.innerHTML =
-          '<img src="https://ide.igp.gob.pe/geovisor/cds-igp-test/FiltroIcon.svg" alt=""  />';
+          '<img src="https://ide.igp.gob.pe/geovisor/cds/FiltroIcon.svg" alt=""  />';
         btnLeyenda.id = "btnLeyendaDOM";
         btnLeyenda.classList.add("active");
         iframe.contentDocument.body.appendChild(btnLeyenda);
 
         // Creamos la ventana flotante
         const popupLeyenda = iframe.contentDocument.createElement("div");
-        popupLeyenda.style.position = "fixed";
+        popupLeyenda.style.position = "absolute";
         popupLeyenda.style.width = "300px";
         popupLeyenda.style.height = "300px";
-
         popupLeyenda.style.marginLeft = "47px";
         popupLeyenda.style.backgroundColor = "#fff";
         popupLeyenda.style.border = "2px solid #0000AF";
-        popupLeyenda.style.display = "block";
+        popupLeyenda.style.display = "none";
         // Agregamos las propiedades de redimensionamiento
         popupLeyenda.style.resize = "vertical";
         popupLeyenda.style.left = "3px";
         popupLeyenda.style.overflow = "auto";
-        popupLeyenda.style.bottom = "108px";
+        //popupLeyenda.style.bottom = "108px";
+        popupLeyenda.style.top = "calc(100% - 368px)";
+
         popupLeyenda.id = "popupLeyenda";
         iframe.contentDocument.body.appendChild(popupLeyenda);
 
@@ -490,11 +633,11 @@ export default {
 
         // Agregamos el encabezado
         const headerLeyenda = iframe.contentDocument.createElement("div");
-        headerLeyenda.style.backgroundColor = "#ffffff";
+        headerLeyenda.style.backgroundColor = "#0000AF";
         headerLeyenda.style.display = "flex";
         headerLeyenda.style.justifyContent = "start";
         headerLeyenda.style.alignItems = "center";
-        headerLeyenda.style.color = "#0000AF";
+        headerLeyenda.style.color = "#FFFFFF";
         headerLeyenda.style.fontSize = "16px";
         headerLeyenda.style.fontWeight = "600";
         headerLeyenda.style.textAlign = "center";
@@ -506,7 +649,7 @@ export default {
 
         // Agregamos el contenido
         const contentLeyenda = iframe.contentDocument.createElement("div");
-        contentLeyenda.style.backgroundColor = "#f5f5f5";
+        contentLeyenda.style.backgroundColor = "#ffffff";
         contentLeyenda.style.padding = "10px";
         contentLeyenda.style.display = "flex";
         contentLeyenda.style.justifyContent = "start";
@@ -575,60 +718,40 @@ export default {
         switchContainer.setAttribute("id", "switchConteiner");
         ContainerLeyenda.appendChild(switchContainer);
 
-        /* ESTO ES PARA INYECTAR EL JS Y JALARLO
+        /* ESTO ES PARA INYECTAR EL JS Y JALARLO */
         const script = iframe.contentDocument.createElement("script");
-        script.src =
-          "https://ide.igp.gob.pe/geovisor/cds-igp-test/leyendaObserver.js";
-        iframe.contentDocument.body.appendChild(script); */
+        script.src = `https://ide.igp.gob.pe/geovisor/${process.env.VUE_APP_TITLE}/leyendaObserver.js`;
+        iframe.contentDocument.body.appendChild(script);
 
         // FIN BTN LEYENDA
-
-        this.drawer = false;
+        this.drawer = true;
+        this.mostrarGeo = true;
         this.indexflecha = 1;
         this.isLoaded = true;
         this.showVButton = true;
-        btn.click();
         setTimeout(() => {
-          this.showTooltip = true;
-          this.tooltipText = "¡Conoce más!";
+          this.tooltipText = "¡Cierra aquí!";
+          setTimeout(() => {
+            this.accionTooltip = "hidden";
+          }, 3000);
         }, 1000);
       }, 3000);
     },
     btnGeofi() {
-      this.funcionFlechaFalse();
-      
       this.ocultarTodo();
       this.mostrarGeo = true;
-      if (this.elementos === false) {
-        this.positivo();
-      }
     },
     btnCont() {
-      this.funcionFlechaFalse();
-
       this.ocultarTodo();
       this.mostrarCont = true;
-      if (this.elementos === false) {
-        this.positivo();
-      }
     },
     btnListado() {
-      this.funcionFlechaFalse();
-
       this.ocultarTodo();
       this.mostrarList = true;
-      if (this.elementos === false) {
-        this.positivo();
-      }
     },
     btnFuncion() {
-      this.funcionFlechaFalse();
-
       this.ocultarTodo();
       this.mostrarFun = true;
-      if (this.elementos === false) {
-        this.positivo();
-      }
     },
 
     ocultarTodo() {
@@ -638,37 +761,23 @@ export default {
       this.mostrarList = false;
       this.drawer = true;
     },
+    ocultarTodo2() {
+      this.mostrarGeo = false;
+      this.mostrarFun = false;
+      this.mostrarCont = false;
+      this.mostrarList = false;
+    },
 
     onMoveWidgetsButtonClick() {
       this.drawer = !this.drawer;
-      this.imageFlipped = !this.imageFlipped;
-      const iconFlecha = document.querySelector("#iconFlecha");
-      iconFlecha.classList.toggle("rotate-180", this.imageFlipped);
 
-      if (this.elementos === true) {
-        this.negativo();
-        this.tooltipText = "¡Abre aquí!";
-      } else if (this.elementos === false) {
-        this.positivo();
-        this.tooltipText = "¡Cierra aquí!";
-      }
-    },
-    positivo() {
-      this.elementos = true;
-      this.movewidgets(465);
-    },
-    negativo() {
-      this.elementos = false;
-      this.movewidgets(-465);
-    },
-    funcionFlechaFalse() {
       if (this.drawer === false) {
-        this.imageFlipped = !this.imageFlipped;
-        const iconFlecha = document.querySelector("#iconFlecha");
-        iconFlecha.classList.toggle("rotate-180", this.imageFlipped);
+        this.ocultarTodo2();
+      } else if (this.drawer === true) {
+        this.mostrarGeo = true;
       }
     },
-
+   
     movewidgets(displacement) {
       const iframe = document.getElementById("inlineFrameExample");
       const idocument = iframe.contentWindow.document;
@@ -695,6 +804,27 @@ export default {
   watch: {
     drawer(val) {
       this.railVariantLeft = val ? 260 : 10;
+
+      if (val === true) {
+        this.tooltipText = "¡Cierra aquí!";
+        this.widTooltip = "150px";
+        this.movewidgets(465);
+
+        if (
+          this.mostrarCont === false &
+          this.mostrarFun === false &
+          this.mostrarGeo === false &
+          this.mostrarList === false
+        ) {
+          this.mostrarGeo = true;
+        }
+      } else if (val === false) {
+        this.tooltipText = "¡Abre aquí!";
+        this.widTooltip = "140px";
+        this.movewidgets(-465);
+        this.mostrarGeo = false;
+      }
+      console.log(val);
     },
   },
 };
@@ -841,7 +971,7 @@ export default {
 }
 
 .my-linktop {
-  color: #737b80; /* color del enlace */
+  color: #211d18; /* color del enlace */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -849,19 +979,24 @@ export default {
 }
 
 .my-linktop:hover {
-  color: #0032ff;
-  font-weight: 600;
+  color: #0000af !important;
 }
 
 .my-linktop:active {
-  color: #0032ff;
+  color: #0000af !important;
 }
 .my-linktop:link {
   color: #737b80;
   text-decoration: none;
 }
+.my-linktop.active {
+  color: #0000af;
+  pointer-events: none; /* Evita que se pueda hacer clic en el enlace */
+  cursor: default; /* Cambia el cursor a "predeterminado" para indicar que no se puede hacer clic */
+}
 
 #dividermenutopL {
+  color: #211d18;
   margin-top: 4px;
   height: 16px;
   margin-left: 10px;
@@ -881,27 +1016,30 @@ export default {
 
 /* botones link */
 .my-link {
-  color: #737b80;
+  color: #211d18;
   text-decoration: none;
   margin-right: 1rem;
   font-weight: 300;
   font-size: 12px;
-}
-
-.my-link:hover {
-  color: #0032ff !important;
-  font-weight: 600;
-}
-
-.my-link:active {
-  color: #0032ff;
 }
 .my-link:link {
   color: #737b80;
   text-decoration: none;
   margin-right: 1rem;
 }
+.my-link:active {
+  color: #0000af;
+}
+
+.link-text:hover,
+.my-link:hover,
+.link-text:hover .mi-svg {
+  color: #0000af !important;
+  fill: #0000af !important;
+  text-decoration: underline;
+}
 #dividermenubot {
+  color: #211d18;
   height: 40%;
   margin-left: 5px;
   margin-right: 15px;
@@ -965,7 +1103,45 @@ export default {
 .dropdown-menu a:hover {
   background-color: #f7f7f7;
 }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: v-bind(accionTooltip);
+  width: v-bind(widTooltip);
+  background: rgb(34, 209, 238);
+  background: linear-gradient(
+    90deg,
+    rgba(34, 209, 238, 1) 0%,
+    rgba(61, 90, 241, 1) 100%
+  );
+  text-transform: none;
+  color: #fff;
+  text-align: center;
+  border-radius: 41.116px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 57%;
+  left: 130%;
+  margin-top: -20px;
+  transition: opacity 0.3s ease-in-out;
+  box-shadow: -0.839103px 1.67821px 3.35641px rgba(0, 0, 0, 0.6);
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+.cerrarAside {
+  display: none;
+}
 @media screen and (max-width: 1335px) {
+  .vNavi {
+    margin-top: 80px !important;
+  }
   .barra-superior {
     flex-wrap: wrap;
   }
@@ -989,14 +1165,17 @@ export default {
   #contenedor {
     top: 80px;
   }
-  .vNavi {
-    margin-top: 80px !important;
-  }
 }
 @media screen and (max-width: 970px) {
   .titulo,
   #dividermenutop {
     display: none;
+  }
+  .cerrarAside {
+    display: block;
+  }
+  .tooltip:hover .tooltiptext {
+    visibility: hidden;
   }
 }
 </style>

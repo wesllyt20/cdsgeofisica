@@ -8,7 +8,7 @@
       </p>
     </div>
     <h2 id="subtiList">Filtro por región:</h2>
-    <select class="select-css" v-model="selectedRegion"  @change="goToFirstPage">
+    <select class="select-css" v-model="selectedRegion" @change="goToFirstPage">
       <option v-for="(region, index) in regions" :key="index" :value="index">
         {{ region.nombre }}
       </option>
@@ -17,10 +17,10 @@
     <div class="table-container">
       <table>
         <thead>
-          <tr class="" style="color: #0032ff; ">
+          <tr class="" style="color: #0000af">
             <th style="width: 40px">#</th>
             <th class="text-start" style="width: 150px">Ciudad</th>
-            <th style="width: 90px;">Año</th>
+            <th style="width: 90px">Año</th>
             <th style="width: 30px">Acción</th>
           </tr>
         </thead>
@@ -34,18 +34,27 @@
             <td class="text-start">{{ item.ciudad }}</td>
             <td>{{ item.ano }}</td>
             <td>
-              <a :href="`${item.documento}`" target="_blank">Ver</a>
+              <a class="verList" :href="`${item.documento}`" target="_blank">Ver</a>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
     <div v-if="totalPages > 1" class="pagination">
-  <button @click="previousPage">Anterior</button>
-  <span style="color: #0032ff">{{ currentPage }}/{{ totalPages }}</span>
-  <button @click="nextPage">Siguiente</button>
-</div>
-
+      <button @click="previousPage">Anterior</button>
+      <span style="color: #0000af">{{ currentPage }}/{{ totalPages }}</span>
+      <button  @click="nextPage">Siguiente</button>
+    </div>
+    <br />
+    <a class="btnFunciFun" @click="recepGeo" style="margin-left: 0px"
+      >Ver Acerca de</a
+    >
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
   </div>
 </template>
   
@@ -84,9 +93,12 @@ export default {
     },
   },
   methods: {
+    recepGeo() {
+      document.querySelectorAll("#acerca").forEach((boton) => boton.click());
+    },
     async fetchData() {
       const { data } = await axios.get(
-        //"https://ide.igp.gob.pe/geovisor/cds-igp/regenLinks.json"
+        //"https://ide.igp.gob.pe/geovisor/cds/regenLinks.json"
         "https://api.npoint.io/9858da118b3cdc0fe6e9"
       );
       this.regions[0].items = data.LIMA;
@@ -109,7 +121,7 @@ export default {
     },
     goToFirstPage() {
       this.currentPage = 1;
-    }
+    },
   },
   mounted() {
     this.fetchData();
@@ -139,7 +151,7 @@ export default {
   display: flex;
   align-items: center;
 
-  color: #0032ff;
+  color: #0000af;
 }
 .parrafoList {
   font-style: normal;
@@ -206,6 +218,9 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+.verList:hover {
+  text-decoration: underline;
+}
 
 .pagination {
   display: flex;
@@ -220,13 +235,34 @@ a {
   border-radius: 5px;
   margin: 0 5px;
   cursor: pointer;
-  color: #0032ff;
+  color: #0000af;
 }
-.pagination button:hover {
-  background-color: #edf7ff;
+.pagination button:hover,
+.pagination button:hover:active {
+  background-color: #0000af;
+  color: #fff;
 }
 .pagination span {
   margin: 0 10px;
+}
+.btnFunciFun {
+  width: 195px;
+  height: 41px;
+  background: #ffffff;
+  border: 1px solid #0000af;
+  color: #0000af;
+  border-radius: 4.26437px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btnFunciFun:hover {
+  background-color: #0000af;
+  color: #ffffff;
 }
 </style>
   

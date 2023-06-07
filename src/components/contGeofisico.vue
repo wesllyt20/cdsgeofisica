@@ -31,16 +31,12 @@
         por la población y autoridades para la correcta implementación de
         acciones y medidas para reducir el riesgo ante sismos.
       </p>
-      <a
-        id="btnFunci"
-        class="my-linktop"
-        @click="recepFunc"
-        >Ver Guia de uso</a
-      >
-      <br />
+      <a class="btnFunciG" @click="recepFunc">Ver Guia de uso</a>
 
       <br />
-
+      <a class="btnFunciG" @click="recepInfo">Ver Informes </a>
+      <br />
+      <br />
       <br />
     </div>
   </div>
@@ -51,6 +47,9 @@ export default {
   methods: {
     recepFunc() {
       document.querySelectorAll("#func").forEach((boton) => boton.click());
+    },
+    recepInfo() {
+      document.querySelectorAll("#listado").forEach((boton) => boton.click());
     },
   },
 };
@@ -64,6 +63,7 @@ export default {
   color: #0a1fc2;
   margin-bottom: 12px;
   margin-left: 45px;
+  margin-top: -120px;
 }
 #parGeo {
   margin-bottom: 80px !important;
@@ -78,18 +78,17 @@ export default {
   margin-right: 45px;
 }
 .bg-image2 {
-  background-image: url('https://ide.igp.gob.pe/geovisor/cds-igp/playa.webp');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 200px; /* Ajusta la altura según sea necesario */
-  background-position: center top -50px; /* Mueve la imagen hacia arriba en 50 píxeles */
-  background-color: #0077be; /* Color de fondo */
-  background: linear-gradient(
+  width: 450px;
+  height: 550px;
+  background-image: linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 1)
+      rgba(255, 255, 255, 0) 65%,
+      rgba(255, 255, 255, 1) 72%
     ),
-    url('https://ide.igp.gob.pe/geovisor/cds-igp/playa.webp'); /* Agrega un degradado */
+    url("https://ide.igp.gob.pe/geovisor/cds/costaImage.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
 }
 ::-webkit-scrollbar {
   width: 8px;
@@ -103,16 +102,15 @@ export default {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #888;
-}
-#btnFunci {
-  width: 141.98px;
-  height: 24.73px;
+}.btnFunciG {
+  width: 195px;
+  height: 41px;
   background: #ffffff;
-  border: 2px solid #0000af;
-  color:#0000af;
+  border: 1px solid #0000af;
+  color: #0000af;
   border-radius: 4.26437px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
   line-height: 15px;
   display: flex;
@@ -120,9 +118,8 @@ export default {
   justify-content: center;
   margin-left: 45px;
 }
-#btnFunci:hover{
+.btnFunciG:hover {
   background-color: #0000af;
-  color:#ffffff;
-  
+  color: #ffffff;
 }
 </style>

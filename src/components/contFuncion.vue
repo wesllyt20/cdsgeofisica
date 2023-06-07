@@ -51,7 +51,7 @@
 
       <p class="parrafoFun">
         <span class="pasos"> Capas : </span>
-        Selecciona el departamento y ciudad para acceder a la información
+        Selecciona la capa de estudios para acceder a la información
         disponible.
       </p>
     </div>
@@ -186,13 +186,19 @@
     <br />
 
     <a
-      id="btnAcercade"
-      class="my-linktop"
+      class="btnAcercadeF"
       @click="recepGeo"
       >Ver Acerca de</a
     >
     <br />
     <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
   </div>
 </template>
   
@@ -266,15 +272,15 @@ export default {
 .anuncio {
   margin: 0px 30px 0px 45px;
 }
-#btnAcercade {
-  width: 141.98px;
-  height: 24.73px;
+.btnAcercadeF {
+  width: 195px;
+  height: 41px;
   background: #ffffff;
-  border: 2px solid #0000af;
-  color:#0000af;
+  border: 1px solid #0000af;
+  color: #0000af;
   border-radius: 4.26437px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
   line-height: 15px;
   display: flex;
@@ -282,8 +288,8 @@ export default {
   justify-content: center;
   margin-left: 45px;
 }
-#btnAcercade:hover {
+.btnAcercadeF:hover {
   background-color: #0000af;
-  color:#ffffff;
+  color: #ffffff;
 }
 </style>

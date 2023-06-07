@@ -5,16 +5,17 @@
       <p class="parrafoCont">
         Lunes a Viernes de 08:30 a 16:30 Calle Badajoz Nº 169 Urb. Mayorazgo IV
         Etapa Ate, Lima 15012
-        <a href="mailto:comunicaciones@igp.gob.pe" rel="nofollow"
+        <a class="linkCorreo" href="mailto:comunicaciones@igp.gob.pe" rel="nofollow"
           >comunicaciones@igp.gob.pe</a
         >
         <br />
         +51 13172300
       </p>
-      <div class="tiLista mt-4 pb-2">
+      <div class="tiLista mt-7 pb-2">
         <label> Redes Sociales</label>
       </div>
-      <ol class="subtiLista">
+
+      <div class="piso1">
         <ul class="ulLista">
           <svg
             width="28px"
@@ -22,7 +23,7 @@
             viewBox="-3.36 -3.36 54.72 54.72"
             xmlns="http://www.w3.org/2000/svg"
             fill="#00214F"
-            style="vertical-align: middle; margin: 0px 2px 2px 0px"
+            style="vertical-align: middle; margin: 0px 4px 2px 0px"
           >
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g
@@ -45,15 +46,14 @@
               </g>
             </g>
           </svg>
-          <a href="https://www.facebook.com/igp.peru" target="_blank">
-            Facebook</a
+          <a href="https://www.facebook.com/igp.peru" target="_blank">igp.peru</a
           >
         </ul>
 
         <ul class="ulLista">
           <svg
-            width="28px"
-            height="28px"
+            width="29px"
+            height="29px"
             viewBox="-2.88 -2.88 37.76 37.76"
             id="Camada_1"
             version="1.1"
@@ -61,7 +61,7 @@
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             fill="#00214F"
-            style="vertical-align: middle; margin: 0px 2px 2px 0px"
+            style="vertical-align: middle; margin: 0px 4px 2px 0px"
           >
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g
@@ -89,36 +89,51 @@
               </g>
             </g>
           </svg>
-          <a href="https://www.instagram.com/igp.peru/" target="_blank">
-            Instagram</a
+          <a href="https://www.instagram.com/igp.peru/" target="_blank">igp.peru</a
           >
         </ul>
+      </div>
 
+      <div class="piso2">
         <ul class="ulLista">
           <svg
-            fill="#00214F"
-            width="28px"
-            height="28px"
-            viewBox="-2.88 -2.88 37.76 37.76"
+            fill="#ffffff"
+            width="26px"
+            height="26px"
+            viewBox="-3.2 -3.2 38.40 38.40"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
-            style="vertical-align: middle; margin: 0px 2px 2px 0px"
+            style="vertical-align: middle; margin: 0px 4px 2px 0px"
           >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_bgCarrier"
+              stroke-width="0"
+              transform="translate(1.2799999999999994,1.2799999999999994), scale(0.92)"
+            >
+              <rect
+                x="-3.2"
+                y="-3.2"
+                width="38.40"
+                height="38.40"
+                rx="5.76"
+                fill="#00214F"
+                strokewidth="0"
+              ></rect>
+            </g>
             <g
               id="SVGRepo_tracerCarrier"
               stroke-linecap="round"
               stroke-linejoin="round"
             ></g>
             <g id="SVGRepo_iconCarrier">
-              <title>linkedin</title>
+              <title>youtube</title>
               <path
-                d="M28.778 1.004h-25.56c-0.008-0-0.017-0-0.027-0-1.199 0-2.172 0.964-2.186 2.159v25.672c0.014 1.196 0.987 2.161 2.186 2.161 0.010 0 0.019-0 0.029-0h25.555c0.008 0 0.018 0 0.028 0 1.2 0 2.175-0.963 2.194-2.159l0-0.002v-25.67c-0.019-1.197-0.994-2.161-2.195-2.161-0.010 0-0.019 0-0.029 0h0.001zM9.9 26.562h-4.454v-14.311h4.454zM7.674 10.293c-1.425 0-2.579-1.155-2.579-2.579s1.155-2.579 2.579-2.579c1.424 0 2.579 1.154 2.579 2.578v0c0 0.001 0 0.002 0 0.004 0 1.423-1.154 2.577-2.577 2.577-0.001 0-0.002 0-0.003 0h0zM26.556 26.562h-4.441v-6.959c0-1.66-0.034-3.795-2.314-3.795-2.316 0-2.669 1.806-2.669 3.673v7.082h-4.441v-14.311h4.266v1.951h0.058c0.828-1.395 2.326-2.315 4.039-2.315 0.061 0 0.121 0.001 0.181 0.003l-0.009-0c4.5 0 5.332 2.962 5.332 6.817v7.855z"
+                d="M12.932 20.459v-8.917l7.839 4.459zM30.368 8.735c-0.354-1.301-1.354-2.307-2.625-2.663l-0.027-0.006c-3.193-0.406-6.886-0.638-10.634-0.638-0.381 0-0.761 0.002-1.14 0.007l0.058-0.001c-0.322-0.004-0.701-0.007-1.082-0.007-3.748 0-7.443 0.232-11.070 0.681l0.434-0.044c-1.297 0.363-2.297 1.368-2.644 2.643l-0.006 0.026c-0.4 2.109-0.628 4.536-0.628 7.016 0 0.088 0 0.176 0.001 0.263l-0-0.014c-0 0.074-0.001 0.162-0.001 0.25 0 2.48 0.229 4.906 0.666 7.259l-0.038-0.244c0.354 1.301 1.354 2.307 2.625 2.663l0.027 0.006c3.193 0.406 6.886 0.638 10.634 0.638 0.38 0 0.76-0.002 1.14-0.007l-0.058 0.001c0.322 0.004 0.702 0.007 1.082 0.007 3.749 0 7.443-0.232 11.070-0.681l-0.434 0.044c1.298-0.362 2.298-1.368 2.646-2.643l0.006-0.026c0.399-2.109 0.627-4.536 0.627-7.015 0-0.088-0-0.176-0.001-0.263l0 0.013c0-0.074 0.001-0.162 0.001-0.25 0-2.48-0.229-4.906-0.666-7.259l0.038 0.244z"
               ></path>
             </g>
           </svg>
-          <a href="https://www.linkedin.com/company/igpperu/" target="_blank">
-            Linkedin</a
+
+          <a href="https://www.youtube.com/igp_videos" target="_blank">IGP Perú</a
           >
         </ul>
         <ul class="ulLista">
@@ -132,7 +147,7 @@
             viewBox="-194.56 -194.56 901.12 901.12"
             xml:space="preserve"
             stroke="#ffffff"
-            style="vertical-align: middle; margin: 0px 2px 2px 0px"
+            style="vertical-align: middle; margin: 0px 4px 2px 0px"
           >
             <g
               id="SVGRepo_bgCarrier"
@@ -163,50 +178,39 @@
               </g>
             </g>
           </svg>
-          <a href="https://twitter.com/igp_peru" target="_blank"> Twitter</a>
+          <a href="https://twitter.com/igp_peru" target="_blank">igp_peru</a>
         </ul>
+      </div>
+
+      <div class="piso3">
         <ul class="ulLista">
           <svg
-            fill="#ffffff"
+            fill="#00214F"
             width="28px"
             height="28px"
-            viewBox="-3.2 -3.2 38.40 38.40"
+            viewBox="-2.88 -2.88 37.76 37.76"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
-            style="vertical-align: middle; margin: 0px 2px 2px 0px"
+            style="vertical-align: middle; margin: 0px 4px 2px 0px"
           >
-            <g
-              id="SVGRepo_bgCarrier"
-              stroke-width="0"
-              transform="translate(1.2799999999999994,1.2799999999999994), scale(0.92)"
-            >
-              <rect
-                x="-3.2"
-                y="-3.2"
-                width="38.40"
-                height="38.40"
-                rx="5.76"
-                fill="#00214F"
-                strokewidth="0"
-              ></rect>
-            </g>
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g
               id="SVGRepo_tracerCarrier"
               stroke-linecap="round"
               stroke-linejoin="round"
             ></g>
             <g id="SVGRepo_iconCarrier">
-              <title>youtube</title>
+              <title>linkedin</title>
               <path
-                d="M12.932 20.459v-8.917l7.839 4.459zM30.368 8.735c-0.354-1.301-1.354-2.307-2.625-2.663l-0.027-0.006c-3.193-0.406-6.886-0.638-10.634-0.638-0.381 0-0.761 0.002-1.14 0.007l0.058-0.001c-0.322-0.004-0.701-0.007-1.082-0.007-3.748 0-7.443 0.232-11.070 0.681l0.434-0.044c-1.297 0.363-2.297 1.368-2.644 2.643l-0.006 0.026c-0.4 2.109-0.628 4.536-0.628 7.016 0 0.088 0 0.176 0.001 0.263l-0-0.014c-0 0.074-0.001 0.162-0.001 0.25 0 2.48 0.229 4.906 0.666 7.259l-0.038-0.244c0.354 1.301 1.354 2.307 2.625 2.663l0.027 0.006c3.193 0.406 6.886 0.638 10.634 0.638 0.38 0 0.76-0.002 1.14-0.007l-0.058 0.001c0.322 0.004 0.702 0.007 1.082 0.007 3.749 0 7.443-0.232 11.070-0.681l-0.434 0.044c1.298-0.362 2.298-1.368 2.646-2.643l0.006-0.026c0.399-2.109 0.627-4.536 0.627-7.015 0-0.088-0-0.176-0.001-0.263l0 0.013c0-0.074 0.001-0.162 0.001-0.25 0-2.48-0.229-4.906-0.666-7.259l0.038 0.244z"
+                d="M28.778 1.004h-25.56c-0.008-0-0.017-0-0.027-0-1.199 0-2.172 0.964-2.186 2.159v25.672c0.014 1.196 0.987 2.161 2.186 2.161 0.010 0 0.019-0 0.029-0h25.555c0.008 0 0.018 0 0.028 0 1.2 0 2.175-0.963 2.194-2.159l0-0.002v-25.67c-0.019-1.197-0.994-2.161-2.195-2.161-0.010 0-0.019 0-0.029 0h0.001zM9.9 26.562h-4.454v-14.311h4.454zM7.674 10.293c-1.425 0-2.579-1.155-2.579-2.579s1.155-2.579 2.579-2.579c1.424 0 2.579 1.154 2.579 2.578v0c0 0.001 0 0.002 0 0.004 0 1.423-1.154 2.577-2.577 2.577-0.001 0-0.002 0-0.003 0h0zM26.556 26.562h-4.441v-6.959c0-1.66-0.034-3.795-2.314-3.795-2.316 0-2.669 1.806-2.669 3.673v7.082h-4.441v-14.311h4.266v1.951h0.058c0.828-1.395 2.326-2.315 4.039-2.315 0.061 0 0.121 0.001 0.181 0.003l-0.009-0c4.5 0 5.332 2.962 5.332 6.817v7.855z"
               ></path>
             </g>
           </svg>
-
-          <a href="https://www.youtube.com/igp_videos" target="_blank">
-            Youtube</a
+          <a href="https://www.linkedin.com/company/igpperu/" target="_blank">Instituto Geofísico del Perú</a
           >
         </ul>
+      </div>
+      <div class="piso4">
         <ul class="ulLista">
           <svg
             fill="#00214F"
@@ -218,7 +222,7 @@
             xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="-3.2 -3.2 38.40 38.40"
             xml:space="preserve"
-            style="vertical-align: middle; margin: 0px 2px 2px 0px"
+            style="vertical-align: middle; margin: 0px 4px 2px 0px"
           >
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g
@@ -236,11 +240,10 @@
             class="estiloA"
             href="https://www.flickr.com/people/156092703@N08/"
             target="_blank"
-          >
-            Flicker</a
+          >IGP Perú</a
           >
         </ul>
-      </ol>
+      </div>
     </div>
   </div>
 </template>
@@ -260,6 +263,9 @@ export default {};
   color: #0a1fc2;
   margin: 45px 0px 12px 45px;
 }
+.linkCorreo:hover{
+  text-decoration: underline;
+}
 #parCont {
   margin-bottom: 80px !important;
   margin-left: 45px;
@@ -272,21 +278,7 @@ export default {};
   color: #00132e;
   margin: 0px 20px 0px 0px;
 }
-.bg-image {
-  background-image: url(https://i.ibb.co/BrFG4zN/image.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 200px; /* Altura ajustada */
-  background-position: center; /* Alinea la imagen al centro */
-  background-color: #0077be; /* Color de fondo */
-  background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 1)
-    ),
-    url(https://i.ibb.co/BrFG4zN/image.png); /* Agrega un degradado */
-  background-position-y: -200px;
-}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -302,7 +294,7 @@ export default {};
 }
 .tiLista {
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 17px;
   line-height: 18px;
 }
@@ -314,19 +306,28 @@ export default {};
   line-height: 18px;
   color: #00132e;
 }
-.subtiLista a {
-  color: #00214F;
-  text-decoration: none;
-  cursor: pointer;
-}
 
 .ulLista {
-  align-items: center;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
   line-height: 150%;
-  color: #00214f;
+  color: #444445;
+  padding: 10px 0px;
+}
+.ulLista a {
+  color: #444445;
+  text-decoration: none;
+  cursor: pointer;
+}
+.piso1 ul,
+.piso2 ul {
+  display: inline-block;
+  width: 50%;
+  box-sizing: border-box;
+}
+.ulLista:hover{
+  text-decoration: underline;
 }
 </style>
   
