@@ -4,74 +4,35 @@
     <!-- SUPERIOR -->
     <div class="barra-superior">
       <div class="logos">
-        <v-img
-          id="minam"
-          src="https://www.igp.gob.pe/programas-de-investigacion/images/logo-minan.png"
-        />
-        <v-img
-          id="igpLogo"
-          src="https://www.igp.gob.pe/programas-de-investigacion/images/logo_igp_normal.png"
-        />
+        <v-img id="minam" src="https://www.igp.gob.pe/programas-de-investigacion/images/logo-minan.png" />
+        <v-img id="igpLogo" src="https://www.igp.gob.pe/programas-de-investigacion/images/logo_igp_normal.png" />
       </div>
       <div id="dividermenutop" class="border border-vertical" />
       <h1 class="titulo">Comportamiento dinámico de suelos - IGP</h1>
 
       <div class="opciones">
-        <a
-          id="acerca"
-          class="my-linktop"
-          @click="btnGeofi()"
-          :class="{ 'my-linktop': true, active: mostrarGeo }"
-          >Acerca de</a
-        >
+        <a id="acerca" class="my-linktop" @click="btnGeofi()" :class="{ 'my-linktop': true, active: mostrarGeo }">Acerca
+          de</a>
         <div id="dividermenutopL" class="border border-vertical" />
-        <a
-          id="func"
-          class="my-linktop"
-          @click="btnFuncion()"
-          :class="{ 'my-linktop': true, active: mostrarFun }"
-          >Guía de uso</a
-        >
+        <a id="func" class="my-linktop" @click="btnFuncion()" :class="{ 'my-linktop': true, active: mostrarFun }">Guía de
+          uso</a>
         <div id="dividermenutopL" class="border border-vertical" />
-        <a
-          id="listado"
-          class="my-linktop"
-          @click="btnListado()"
-          :class="{ 'my-linktop': true, active: mostrarList }"
-          >Informes</a
-        >
+        <a id="listado" class="my-linktop" @click="btnListado()"
+          :class="{ 'my-linktop': true, active: mostrarList }">Informes</a>
         <div id="dividermenutopL" class="border border-vertical" />
-        <a
-          id="contacto"
-          class="my-linktop"
-          @click="btnCont()"
-          :style="{ marginRight: '50px' }"
-          :class="{ 'my-linktop': true, active: mostrarCont }"
-          >Contacto</a
-        >
+        <a id="contacto" class="my-linktop" @click="btnCont()" :style="{ marginRight: '50px' }"
+          :class="{ 'my-linktop': true, active: mostrarCont }">Contacto</a>
       </div>
 
       <button class="menu-btn" @click="toggleMenu">
-        <svg
-          fill="#65696c"
-          width="24px"
-          height="24px"
-          viewBox="0 0 32.00 32.00"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          stroke="#65696c"
-          style="margin-top: 10px"
-        >
+        <svg fill="#65696c" width="24px" height="24px" viewBox="0 0 32.00 32.00" version="1.1"
+          xmlns="http://www.w3.org/2000/svg" stroke="#65696c" style="margin-top: 10px">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
           <g id="SVGRepo_iconCarrier">
             <path
-              d="M0.844 6.050c-0.256-0.256-0.381-0.581-0.381-0.975s0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.125 0.975 0.381s0.381 0.581 0.381 0.975-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381zM31.306 14.963c0.256 0.256 0.381 0.581 0.381 0.975s-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381s-0.381-0.581-0.381-0.975 0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.125 0.975 0.381zM31.306 25.819c0.256 0.256 0.381 0.581 0.381 0.975s-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381s-0.381-0.581-0.381-0.975 0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.131 0.975 0.381z"
-            ></path>
+              d="M0.844 6.050c-0.256-0.256-0.381-0.581-0.381-0.975s0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.125 0.975 0.381s0.381 0.581 0.381 0.975-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381zM31.306 14.963c0.256 0.256 0.381 0.581 0.381 0.975s-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381s-0.381-0.581-0.381-0.975 0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.125 0.975 0.381zM31.306 25.819c0.256 0.256 0.381 0.581 0.381 0.975s-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381s-0.381-0.581-0.381-0.975 0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.131 0.975 0.381z">
+            </path>
           </g>
         </svg>
       </button>
@@ -79,48 +40,28 @@
       <div v-if="showMenu" class="dropdown-menu">
         <ul>
           <li>
-            <a
-              id="acerca"
-              @click="
-                btnGeofi();
-                closeMenu();
-              "
-              :class="{ 'my-linktop': true, active: mostrarGeo }"
-              >Acerca de</a
-            >
+            <a id="acerca" @click="
+              btnGeofi();
+            closeMenu();
+            " :class="{ 'my-linktop': true, active: mostrarGeo }">Acerca de</a>
           </li>
           <li>
-            <a
-              id="func"
-              @click="
-                btnFuncion();
-                closeMenu();
-              "
-              :class="{ 'my-linktop': true, active: mostrarFun }"
-              >Guía de uso</a
-            >
+            <a id="func" @click="
+              btnFuncion();
+            closeMenu();
+            " :class="{ 'my-linktop': true, active: mostrarFun }">Guía de uso</a>
           </li>
           <li>
-            <a
-              id="listado"
-              @click="
-                btnListado();
-                closeMenu();
-              "
-              :class="{ 'my-linktop': true, active: mostrarList }"
-              >Informes</a
-            >
+            <a id="listado" @click="
+              btnListado();
+            closeMenu();
+            " :class="{ 'my-linktop': true, active: mostrarList }">Informes</a>
           </li>
           <li>
-            <a
-              id="contacto"
-              @click="
-                btnCont();
-                closeMenu();
-              "
-              :class="{ 'my-linktop': true, active: mostrarCont }"
-              >Contacto</a
-            >
+            <a id="contacto" @click="
+              btnCont();
+            closeMenu();
+            " :class="{ 'my-linktop': true, active: mostrarCont }">Contacto</a>
           </li>
         </ul>
       </div>
@@ -129,57 +70,31 @@
     <!-- final superior -->
     <!-- INFERIOR -->
     <div class="barra-inferior">
-      <a
-        class="my-link"
-        href="https://www.gob.pe/igp"
-        target="_blank"
-        :style="{ marginLeft: '48px' }"
-      >
+      <a class="my-link" href="https://www.gob.pe/igp" target="_blank" :style="{ marginLeft: '48px' }">
         <span class="link-text">
-          <svg
-            class="mi-svg"
-            width="18px"
-            height="18px"
-            viewBox="0 0 24.00 24.00"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="#211d18"
-            style="vertical-align: middle"
-          >
+          <svg class="mi-svg" width="18px" height="18px" viewBox="0 0 24.00 24.00" xmlns="http://www.w3.org/2000/svg"
+            fill="#211d18" style="vertical-align: middle">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g
-              id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
             <g id="SVGRepo_iconCarrier">
               <rect x="0" fill="none" width="24" height="24"></rect>
               <g>
-                <path
-                  d="M22 9L12 1 2 9v2h2v10h5v-4c0-1.657 1.343-3 3-3s3 1.343 3 3v4h5V11h2V9z"
-                ></path>
+                <path d="M22 9L12 1 2 9v2h2v10h5v-4c0-1.657 1.343-3 3-3s3 1.343 3 3v4h5V11h2V9z"></path>
               </g>
             </g>
           </svg>Portal IGP
         </span>
       </a>
       <div id="dividermenubot" class="border border-vertical" />
-      <a
-        class="my-link"
-        href="https://www.igp.gob.pe/servicios/infraestructura-de-datos-espaciales/"
-        target="_blank"
-        >Infraestructura de datos espaciales (IDE - IGP)</a
-      >
+      <a class="my-link" href="https://www.igp.gob.pe/servicios/infraestructura-de-datos-espaciales/"
+        target="_blank">Infraestructura de datos espaciales (IDE - IGP)</a>
       <div id="dividermenubot" class="border border-vertical" />
-      <a
-        class="my-link"
+      <a class="my-link"
         href="https://www.igp.gob.pe/servicios/infraestructura-de-datos-espaciales/componentes/visor-geografico"
-        target="_blank"
-        >Visor Geográfico</a
-      >
+        target="_blank">Visor Geográfico</a>
       <div id="dividermenubot" class="border border-vertical" />
-      <span class="my-link" target="_blank" style="color: #0000af; text-decoration: none"
-        >Comportamiento dinámico de suelos</span
-      >
+      <span class="my-link" target="_blank" style="color: #0000af; text-decoration: none">Comportamiento dinámico de
+        suelos</span>
     </div>
     <!-- final inferior -->
     <!-- EMD HEADER -->
@@ -187,56 +102,34 @@
     <!-- START MENU -->
     <!-- boton -->
     <div v-if="showVButton" class="tooltip">
-      <v-btn
-        id="btnFlecha"
-        class="rail-variant ml-n9"
-        :class="{ 'rail-variant--open': drawer, 'bounce-right': isLoaded }"
-        icon
-        @click.stop="onMoveWidgetsButtonClick"
-      >
-        <v-img
-          id="iconFlecha"
-          class="rotate-image"
-          :class="{ 'rotate-180': !drawer }"
-          src="https://i.ibb.co/CJzYHCM/Vector-1.png"
-        ></v-img>
+      <v-btn id="btnFlecha" class="rail-variant ml-n9" :class="{ 'rail-variant--open': drawer, 'bounce-right': isLoaded }"
+        icon @click.stop="onMoveWidgetsButtonClick">
+        <v-img id="iconFlecha" class="rotate-image" :class="{ 'rotate-180': !drawer }"
+          src="https://i.ibb.co/CJzYHCM/Vector-1.png"></v-img>
         <!--https://i.ibb.co/CJzYHCM/Vector-1.png →→→→ -->
         <span class="tooltiptext">{{ tooltipText }}</span>
       </v-btn>
     </div>
     <!-- contenedor de menu -->
-    <v-navigation-drawer
-      class="vNavi"
-      v-model="drawer"
-      :scrim="false"
-      hide-overlay
-      :style="{
-        transition: 'transform 0.01s ease-in-out',
-        width: anchoMenu,
-        marginTop: marginTopNav,
-      }"
-    >
-      <div
-        class="cerrarAside"
-        style="
+    <v-navigation-drawer class="vNavi" v-model="drawer" :scrim="false" hide-overlay :style="{
+      transition: 'transform 0.01s ease-in-out',
+      width: anchoMenu,
+      marginTop: marginTopNav,
+    }">
+      <div class="cerrarAside" style="
           position: absolute;
           top: 0;
           right: 0;
           margin: 5px 15px;
           cursor: pointer;
-        "
-        @click="drawer = false"
-      >
-        <a
-          style="
+        " @click="drawer = false">
+        <a style="
             color: #20aaff;
             font-weight: bold;
             font-size: 15px;
             position: relative;
-          "
-        >
-          <span
-            style="
+          ">
+          <span style="
               position: absolute;
               top: 6px;
               right: 6px;
@@ -249,8 +142,7 @@
               display: flex;
               justify-content: center;
               align-items: center;
-            "
-          >
+            ">
             <span style="position: relative">x</span>
           </span>
         </a>
@@ -264,12 +156,8 @@
 
     <!-- START IFRAME -->
     <div id="contenedor" style="">
-      <iframe
-        id="inlineFrameExample"
-        src="https://ide.igp.gob.pe/geovisor/estudios-cts"
-        style="width: 100%; height: 100%; border: 0"
-        @load="iframeLoad"
-      ></iframe>
+      <iframe id="inlineFrameExample" src="https://ide.igp.gob.pe/geovisor/estudios-cts"
+        style="width: 100%; height: 100%; border: 0" @load="iframeLoad"></iframe>
     </div>
     <!-- END IFRAME -->
   </v-app>
@@ -366,7 +254,7 @@ export default {
         // ---- BTN FILTRO
         const iframe = document.getElementById("inlineFrameExample");
         const btn = iframe.contentDocument.createElement("button");
-        btn.onclick = () => {};
+        btn.onclick = () => { };
         btn.innerHTML = "Filtro";
         btn.style.position = "absolute";
         btn.style.left = "0";
@@ -440,20 +328,14 @@ export default {
         activateBtn.style.border = "none";
         activateBtn.style.borderRadius = "5px";
         activateBtn.style.cursor = "pointer";
-        activateBtn.onclick = () => {
-          iframe.contentDocument
-            .querySelectorAll(".jimu-toggle-button:not(.checked)")
-            .forEach((f) => {
-              f.click();
-            });
-        };
-        content.appendChild(activateBtn);
+
 
         // Agregamos el botón RESET al contenido
 
         const resetBtn = iframe.contentDocument.createElement("button");
 
         resetBtn.innerHTML = "Reset";
+        resetBtn.disabled = true;
         resetBtn.style.padding = "5px";
         resetBtn.style.backgroundColor = "#0000AF";
         resetBtn.style.color = "#fff";
@@ -461,12 +343,34 @@ export default {
         resetBtn.style.borderRadius = "5px";
         resetBtn.style.cursor = "pointer";
         resetBtn.style.marginLeft = "10px";
+
+
+        activateBtn.onclick = () => {
+
+          if (select1.selectedIndex !== 0) {
+            iframe.contentDocument
+              .querySelectorAll(".jimu-toggle-button:not(.checked)")
+              .forEach((f) => {
+                f.click();
+              });
+            resetBtn.disabled = false;
+            activateBtn.disabled = true;
+          }
+
+
+        };
+        content.appendChild(activateBtn);
+
         resetBtn.onclick = () => {
           iframe.contentDocument
             .querySelectorAll(".jimu-toggle-button.checked")
             .forEach((f) => {
               f.click();
             });
+          resetBtn.disabled = true;
+          activateBtn.disabled = false;
+          select1.selectedIndex = 0;
+          select2.selectedIndex = 0;
         };
         content.appendChild(resetBtn);
 
@@ -580,7 +484,7 @@ export default {
         // INICIO BTN LEYENDA --------------------------------------------
 
         const btnLeyenda = iframe.contentDocument.createElement("button");
-        btnLeyenda.onclick = () => {};
+        btnLeyenda.onclick = () => { };
         btnLeyenda.innerHTML = "Leyenda";
         btnLeyenda.style.position = "fixed";
         btnLeyenda.style.left = "0";
@@ -611,7 +515,7 @@ export default {
         popupLeyenda.style.marginLeft = "47px";
         popupLeyenda.style.backgroundColor = "#fff";
         popupLeyenda.style.border = "2px solid #0000AF";
-        popupLeyenda.style.display = "none";
+        popupLeyenda.style.display = "block";
         // Agregamos las propiedades de redimensionamiento
         popupLeyenda.style.resize = "vertical";
         popupLeyenda.style.left = "3px";
@@ -777,7 +681,7 @@ export default {
         this.mostrarGeo = true;
       }
     },
-   
+
     movewidgets(displacement) {
       const iframe = document.getElementById("inlineFrameExample");
       const idocument = iframe.contentWindow.document;
@@ -834,6 +738,7 @@ export default {
 * {
   font-family: "Poppins", sans-serif;
 }
+
 #contenedor {
   height: auto;
   position: absolute;
@@ -843,6 +748,7 @@ export default {
   bottom: 0;
   overflow: hidden;
 }
+
 .bounce-right {
   animation: bounce-right 0.8s linear both;
 }
@@ -853,25 +759,31 @@ export default {
     animation-timing-function: ease-in;
     opacity: 1;
   }
+
   24% {
     opacity: 1;
   }
+
   40% {
     transform: translateX(26px);
     animation-timing-function: ease-in;
   }
+
   65% {
     transform: translateX(13px);
     animation-timing-function: ease-in;
   }
+
   82% {
     transform: translateX(6.5px);
     animation-timing-function: ease-in;
   }
+
   93% {
     transform: translateX(4px);
     animation-timing-function: ease-in;
   }
+
   25%,
   55%,
   75%,
@@ -880,12 +792,14 @@ export default {
     transform: translateX(0);
     animation-timing-function: ease-out;
   }
+
   100% {
     transform: translateX(0);
     animation-timing-function: ease-out;
     opacity: 1;
   }
 }
+
 /* CONTENEDOR  */
 .fill-height {
   height: 100vh;
@@ -903,6 +817,7 @@ export default {
 .rail-variant--open {
   left: calc(v-bind(anchoMenu) + 3px);
 }
+
 /* BOTON DE FLECHA */
 #btnFlecha {
   margin-top: 300px;
@@ -912,11 +827,13 @@ export default {
   z-index: v-bind(indexflecha);
   border-radius: 0% 100% 100% 0%;
 }
+
 #iconFlecha {
   margin-left: 30px;
   width: 20px;
   height: 19px;
 }
+
 /* HEADER SUPERIOR */
 .barra-superior {
   display: flex;
@@ -944,11 +861,13 @@ export default {
   width: 122px;
   height: 40px;
 }
+
 #dividermenutop {
   height: 40%;
   margin-left: 25px;
   margin-right: 25px;
 }
+
 .titulo {
   color: #0000af;
   font-style: normal;
@@ -971,7 +890,8 @@ export default {
 }
 
 .my-linktop {
-  color: #211d18; /* color del enlace */
+  color: #211d18;
+  /* color del enlace */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -985,14 +905,18 @@ export default {
 .my-linktop:active {
   color: #0000af !important;
 }
+
 .my-linktop:link {
   color: #737b80;
   text-decoration: none;
 }
+
 .my-linktop.active {
   color: #0000af;
-  pointer-events: none; /* Evita que se pueda hacer clic en el enlace */
-  cursor: default; /* Cambia el cursor a "predeterminado" para indicar que no se puede hacer clic */
+  pointer-events: none;
+  /* Evita que se pueda hacer clic en el enlace */
+  cursor: default;
+  /* Cambia el cursor a "predeterminado" para indicar que no se puede hacer clic */
 }
 
 #dividermenutopL {
@@ -1002,6 +926,7 @@ export default {
   margin-left: 10px;
   margin-right: 10px;
 }
+
 /* HEADER INFERIOR */
 .barra-inferior {
   display: flex;
@@ -1022,11 +947,13 @@ export default {
   font-weight: 300;
   font-size: 12px;
 }
+
 .my-link:link {
   color: #737b80;
   text-decoration: none;
   margin-right: 1rem;
 }
+
 .my-link:active {
   color: #0000af;
 }
@@ -1038,21 +965,26 @@ export default {
   fill: #0000af !important;
   text-decoration: underline;
 }
+
 #dividermenubot {
   color: #211d18;
   height: 40%;
   margin-left: 5px;
   margin-right: 15px;
 }
+
 .rotate-image {
-  transition: transform 0.5s; /* Agrega transición de transformación */
+  transition: transform 0.5s;
+  /* Agrega transición de transformación */
 }
 
 .rotate-image.rotate-180 {
   transform: rotate(180deg);
 }
+
 .menu-btn {
-  display: none; /* ocultar el botón en pantallas grandes */
+  display: none;
+  /* ocultar el botón en pantallas grandes */
   cursor: pointer;
   margin-right: 10px;
   padding: 0px 10px;
@@ -1063,9 +995,11 @@ export default {
   border: 0.566325px solid rgba(25, 32, 36, 0.6);
   border-radius: 3.39795px;
 }
+
 .menu-btn:active {
   filter: brightness(75%);
 }
+
 .dropdown-menu {
   position: absolute;
   margin: 245px 0 0 0;
@@ -1084,11 +1018,13 @@ export default {
   padding: 10px;
   z-index: 199999;
 }
+
 .dropdown-menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 .dropdown-menu li {
   margin-bottom: 10px;
 }
@@ -1113,11 +1049,9 @@ export default {
   visibility: v-bind(accionTooltip);
   width: v-bind(widTooltip);
   background: rgb(34, 209, 238);
-  background: linear-gradient(
-    90deg,
-    rgba(34, 209, 238, 1) 0%,
-    rgba(61, 90, 241, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(34, 209, 238, 1) 0%,
+      rgba(61, 90, 241, 1) 100%);
   text-transform: none;
   color: #fff;
   text-align: center;
@@ -1135,19 +1069,24 @@ export default {
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+
 .cerrarAside {
   display: none;
 }
+
 @media screen and (max-width: 1335px) {
   .vNavi {
     margin-top: 80px !important;
   }
+
   .barra-superior {
     flex-wrap: wrap;
   }
+
   .titulo {
     margin-right: auto;
   }
+
   .menu-btn {
     display: block;
   }
@@ -1159,21 +1098,27 @@ export default {
   .dropdown-menu {
     display: block;
   }
+
   .barra-inferior {
     display: none;
   }
+
   #contenedor {
     top: 80px;
   }
 }
+
 @media screen and (max-width: 970px) {
+
   .titulo,
   #dividermenutop {
     display: none;
   }
+
   .cerrarAside {
     display: block;
   }
+
   .tooltip:hover .tooltiptext {
     visibility: hidden;
   }
